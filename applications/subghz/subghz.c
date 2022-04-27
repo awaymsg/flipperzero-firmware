@@ -108,6 +108,13 @@ SubGhz* subghz_alloc() {
         SubGhzViewIdReadRAW,
         subghz_read_raw_get_view(subghz->subghz_read_raw));
 
+    // OpenSesame
+    subghz->subghz_opensesame = subghz_opensesame_alloc();
+    view_dispatcher_add_view(
+        subghz->view_dispatcher,
+        SubGhzViewIdOpenSesame,
+        subghz_opensesame_get_view(subghz->subghz_opensesame));
+
     // Carrier Test Module
     subghz->subghz_test_carrier = subghz_test_carrier_alloc();
     view_dispatcher_add_view(
@@ -213,6 +220,10 @@ void subghz_free(SubGhz* subghz) {
     // Read RAW
     view_dispatcher_remove_view(subghz->view_dispatcher, SubGhzViewIdReadRAW);
     subghz_read_raw_free(subghz->subghz_read_raw);
+
+    // OpenSesame
+    view_dispatcher_remove_view(subghz->view_dispatcher, SubGhzViewIdOpenSesame);
+    subghz_opensesame_free(subghz->subghz_opensesame);
 
     // Submenu
     view_dispatcher_remove_view(subghz->view_dispatcher, SubGhzViewIdMenu);
