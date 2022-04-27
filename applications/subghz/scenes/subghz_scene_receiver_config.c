@@ -159,8 +159,8 @@ void subghz_scene_receiver_config_on_enter(void* context) {
         (subghz_setting_get_frequency(subghz->setting, value_index) % 1000000) / 10000);
     variable_item_set_current_value_text(item, text_buf);
 
-    if(scene_manager_get_scene_state(subghz->scene_manager, SubGhzSceneReadRAW) !=
-       SubGhzCustomEventManagerSet) {
+    if(scene_manager_get_scene_state(subghz->scene_manager, SubGhzSceneReadRAW) != SubGhzCustomEventManagerSet &&
+       scene_manager_get_scene_state(subghz->scene_manager, SubGhzSceneOpenSesame) != SubGhzCustomEventManagerSet) {
         item = variable_item_list_add(
             subghz->variable_item_list,
             "Hopping:",
