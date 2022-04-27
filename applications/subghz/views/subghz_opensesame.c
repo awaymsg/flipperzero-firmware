@@ -91,9 +91,7 @@ bool subghz_opensesame_input(InputEvent* event, void* context) {
     furi_assert(context);
     SubGhzOpenSesame* instance = context;
 
-    if(event->key == InputKeyBack || event->type != InputTypeShort) {
-        return false;
-    } else if(event->key == InputKeyLeft && event->type == InputTypeShort) {
+    if(event->key == InputKeyLeft && event->type == InputTypeShort) {
         with_view_model(
             instance->view, (SubGhzOpenSesameModel* model) {
                 if(model->status == SubGhzOpenSesameModelStatusIdle) {
@@ -105,9 +103,17 @@ bool subghz_opensesame_input(InputEvent* event, void* context) {
     } else if(event->key == InputKeyBack && event->type == InputTypeShort) {
         with_view_model(
             instance->view, (SubGhzOpenSesameModel* model) {
-                //Exit
-                model->status = SubGhzOpenSesameModelStatusIdle;
-                instance->callback(SubGhzCustomEventViewOpenSesameBack, instance->context);
+                if (model->status == SubGhzOpenSesameModelStatusTx)
+                {
+                    //Stop
+                    instance->callback(SubGhzCustomEventViewOpenSesameTxStop, instance->context);
+                    model->status = SubGhzOpenSesameModelStatusIdle;
+                } else if (model->status == SubGhzOpenSesameModelStatusIdle)
+                {
+                    //Exit
+                    instance->callback(SubGhzCustomEventViewOpenSesameBack, instance->context);
+                    model->status = SubGhzOpenSesameModelStatusIdle;
+                }
                 return true;
             });
     } else if(event->key == InputKeyOk && event->type == InputTypeShort) {
@@ -118,7 +124,7 @@ bool subghz_opensesame_input(InputEvent* event, void* context) {
                     instance->callback(SubGhzCustomEventViewOpenSesameTxStart, instance->context);
                     model->status = SubGhzOpenSesameModelStatusTx;
                 } else if(model->status == SubGhzOpenSesameModelStatusTx) {
-                    //Send
+                    //Stop
                     instance->callback(SubGhzCustomEventViewOpenSesameTxStop, instance->context);
                     model->status = SubGhzOpenSesameModelStatusIdle;
                 }
