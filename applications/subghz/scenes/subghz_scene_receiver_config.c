@@ -24,6 +24,11 @@ const uint32_t hopping_value[HOPPING_COUNT] = {
     SubGhzHopperStateRunnig,
 };
 
+#define CODELENGTH_COUNT 21
+const uint8_t codelength_value[CODELENGTH_COUNT] = {
+    0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+};
+
 uint8_t subghz_scene_receiver_config_uint32_value_index(
     const uint32_t value,
     const uint32_t values[],
@@ -99,6 +104,17 @@ static void subghz_scene_receiver_config_set_preset(VariableItem* item) {
 
     variable_item_set_current_value_text(item, preset_text[index]);
     subghz->txrx->preset = preset_value[index];
+}
+
+static void subghz_scene_code_length_config_set_preset(VariableItem* item) {
+    SubGhz* subghz = variable_item_get_context(item);
+    uint8_t index = variable_item_get_current_value_index(item);
+
+    char text_buf[10] = {0};
+    sprintf(text_buf, "%d", codelength_value[index]);
+
+    variable_item_set_current_value_text(item, text_buf);
+    subghz->txrx->codelength = codelength_value[index];
 }
 
 static void subghz_scene_receiver_config_set_hopping_runing(VariableItem* item) {
@@ -183,6 +199,21 @@ void subghz_scene_receiver_config_on_enter(void* context) {
         subghz->txrx->preset, preset_value, PRESET_COUNT);
     variable_item_set_current_value_index(item, value_index);
     variable_item_set_current_value_text(item, preset_text[value_index]);
+
+    if (scene_manager_get_scene_state(subghz->scene_manager, SubGhzSceneOpenSesame) == SubGhzCustomEventManagerSet)
+    {
+        item = variable_item_list_add(
+            subghz->variable_item_list,
+            "Code Length:",
+            CODELENGTH_COUNT,
+            subghz_scene_code_length_config_set_preset,
+            subghz);
+        value_index = subghz->txrx->codelength;
+        variable_item_set_current_value_index(item, value_index);
+        char text_buf[10] = {0};
+        sprintf(text_buf, "%d", codelength_value[value_index]);
+        variable_item_set_current_value_text(item, text_buf);
+    }
 
     view_dispatcher_switch_to_view(subghz->view_dispatcher, SubGhzViewIdVariableItemList);
 }

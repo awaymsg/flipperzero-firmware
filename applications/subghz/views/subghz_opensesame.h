@@ -15,7 +15,8 @@ void subghz_opensesame_set_callback(
 void subghz_opensesame_add_data_statusbar(
     SubGhzOpenSesame* instance,
     const char* frequency_str,
-    const char* preset_str);
+    const char* preset_str,
+    uint8_t codelength);
 
 void subghz_opensesame_stop_send(SubGhzOpenSesame* instance);
 

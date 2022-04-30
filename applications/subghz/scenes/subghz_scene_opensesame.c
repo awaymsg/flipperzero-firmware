@@ -13,7 +13,7 @@ static void subghz_scene_opensesame_update_statusbar(void* context) {
 
     subghz_get_frequency_modulation(subghz, frequency_str, modulation_str);
     subghz_opensesame_add_data_statusbar(
-        subghz->subghz_opensesame, string_get_cstr(frequency_str), string_get_cstr(modulation_str));
+        subghz->subghz_opensesame, string_get_cstr(frequency_str), string_get_cstr(modulation_str), subghz->txrx->codelength);
 
     string_clear(frequency_str);
     string_clear(modulation_str);

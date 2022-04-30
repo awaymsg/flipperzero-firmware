@@ -147,6 +147,7 @@ SubGhz* subghz_alloc() {
     subghz->txrx->txrx_state = SubGhzTxRxStateSleep;
     subghz->txrx->hopper_state = SubGhzHopperStateOFF;
     subghz->txrx->rx_key_state = SubGhzRxKeyStateIDLE;
+    subghz->txrx->codelength = 8;
     subghz->txrx->history = subghz_history_alloc();
     subghz->txrx->worker = subghz_worker_alloc();
     subghz->txrx->fff_data = flipper_format_string_alloc();

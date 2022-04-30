@@ -19,6 +19,7 @@ typedef struct {
     string_t frequency_str;
     string_t preset_str;
     SubGhzOpenSesameModelStatus status;
+    uint8_t codelength;
 } SubGhzOpenSesameModel;
 
 void subghz_opensesame_set_callback(
@@ -34,12 +35,14 @@ void subghz_opensesame_set_callback(
 void subghz_opensesame_add_data_statusbar(
     SubGhzOpenSesame* instance,
     const char* frequency_str,
-    const char* preset_str) {
+    const char* preset_str,
+    uint8_t codelength) {
     furi_assert(instance);
     with_view_model(
         instance->view, (SubGhzOpenSesameModel* model) {
             string_set(model->frequency_str, frequency_str);
             string_set(model->preset_str, preset_str);
+            model->codelength = codelength;
             return true;
         });
 }
@@ -85,6 +88,10 @@ void subghz_opensesame_draw(Canvas* canvas, SubGhzOpenSesameModel* model) {
         elements_button_center(canvas, "Stop");
         break;
     }
+
+    char text_buf[10] = {0};
+    sprintf(text_buf, "CL: %d", model->codelength);
+    canvas_draw_str(canvas, 94, 61, text_buf);
 }
 
 bool subghz_opensesame_input(InputEvent* event, void* context) {
