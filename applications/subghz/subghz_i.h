@@ -43,8 +43,9 @@
 typedef enum {
     SubGhzNotificationStateStarting,
     SubGhzNotificationStateIDLE,
-    SubGhzNotificationStateTX,
-    SubGhzNotificationStateRX,
+    SubGhzNotificationStateTx,
+    SubGhzNotificationStateRx,
+    SubGhzNotificationStateRxDone,
 } SubGhzNotificationState;
 
 /** SubGhzTxRx state */

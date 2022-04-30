@@ -78,6 +78,8 @@ const SubGhzProtocol subghz_protocol_faac_slh = {
     .encoder = &subghz_protocol_faac_slh_encoder,
 };
 
+static uint32_t seed_global;
+
 /** 
  * Analysis of received data
  * @param instance Pointer to a SubGhzBlockGeneric* instance
@@ -112,7 +114,6 @@ void subghz_protocol_encoder_faac_slh_free(void* context) {
 
 static bool subghz_protocol_faac_slh_gen_data(SubGhzProtocolEncoderFaacSLH* instance) {
     instance->generic.cnt++;
-    FURI_LOG_I(TAG, "SEED (gen_data): %8X\n", instance->generic.seed);
     uint32_t fix = instance->generic.serial << 4 | instance->generic.btn;
     uint32_t hop = 0;
     uint32_t decrypt = 0;
@@ -138,17 +139,8 @@ static bool subghz_protocol_faac_slh_gen_data(SubGhzProtocolEncoderFaacSLH* inst
                 switch(manufacture_code->type) {
                 case KEELOQ_LEARNING_FAAC:
                     //FAAC Learning
-                    man =
-                        subghz_protocol_keeloq_common_faac_learning(instance->generic.seed, manufacture_code->key);
-                    uint32_t hi = manufacture_code->key >> 32;
-                    uint32_t lo = manufacture_code->key & 0xFFFFFFFF;
-                    FURI_LOG_I(TAG, "mfkey: %08lX%08lX mf: %s\n", hi, lo, manufacture_code->name);
-                    FURI_LOG_I(TAG, "SEED (encrypt): %8X\n", instance->generic.seed);
-                    uint32_t mlhi = man >> 32;
-                    uint32_t mllo = man & 0xFFFFFFFF;
-                    FURI_LOG_I(TAG, "man_learning: %8X%8X\n", mlhi, mllo);
+                    man = subghz_protocol_keeloq_common_faac_learning(instance->generic.seed, manufacture_code->key);
                     hop = subghz_protocol_keeloq_common_encrypt(decrypt, man);
-                    FURI_LOG_I(TAG, "hop: %8X\n", hop);
                     break;
                 }
                 break;
@@ -176,10 +168,10 @@ bool subghz_protocol_faac_slh_create_data(
     instance->generic.btn = btn;
     instance->generic.cnt = cnt;
     instance->generic.seed = seed;
+    seed_global = instance->generic.seed;
     instance->manufacture_name = manufacture_name;
     instance->generic.data_count_bit = 64;
     bool res = subghz_protocol_faac_slh_gen_data(instance);
-    FURI_LOG_I(TAG, "SEED (create_data): %8X\n", instance->generic.seed);
     if(res) {
         res = subghz_block_generic_serialize(&instance->generic, flipper_format, frequency, preset);
     }
@@ -306,6 +298,7 @@ void* subghz_protocol_decoder_faac_slh_alloc(SubGhzEnvironment* environment) {
     instance->base.protocol = &subghz_protocol_faac_slh;
     instance->generic.protocol_name = instance->base.protocol->name;
     instance->keystore = subghz_environment_get_keystore(environment);
+    seed_global = 0x0;
     return instance;
 }
 
@@ -396,13 +389,14 @@ void subghz_protocol_decoder_faac_slh_feed(void* context, bool level, uint32_t d
 /** 
  * Analysis of received data
  * @param instance Pointer to a SubGhzBlockGeneric* instance
+ * @param keystore Pointer to a SubGhzKeystore* instance
+ * @param manifacture_name Manufacturer name
  */
 static void subghz_protocol_faac_slh_check_remote_controller
     (SubGhzBlockGeneric* instance,
      SubGhzKeystore* keystore,
      const char** manufacture_name) {
-    
-    FURI_LOG_I(TAG, "SEED (decrypt init): %8X\n", instance->seed);
+    instance->seed = seed_global;
     uint32_t code_fix = instance->data >> 32;
     uint32_t code_hop = instance->data & 0xFFFFFFFF;
     instance->serial = code_fix >> 4;
@@ -412,24 +406,15 @@ static void subghz_protocol_faac_slh_check_remote_controller
 
     for
     M_EACH(manufacture_code, *subghz_keystore_get_data(keystore), SubGhzKeyArray_t) {
-        uint32_t hi = manufacture_code->key >> 32;
-        uint32_t lo = manufacture_code->key & 0xFFFFFFFF;
         switch(manufacture_code->type) {
         case KEELOQ_LEARNING_FAAC:
         // FAAC Learning
         man = subghz_protocol_keeloq_common_faac_learning(instance->seed, manufacture_code->key);
-        FURI_LOG_I(TAG, "mfkey: %08lX%08lX mf: %s\n", hi, lo, manufacture_code->name);
-        FURI_LOG_I(TAG, "SEED (decrypt): %8X\n", instance->seed);
-        uint32_t mlhi = man >> 32;
-        uint32_t mllo = man & 0xFFFFFFFF;
-        FURI_LOG_I(TAG, "man_learning: %8X%8X\n", mlhi, mllo);
         decrypt = subghz_protocol_keeloq_common_decrypt(code_hop, man);
-        FURI_LOG_I(TAG, "hop: %8X\n", code_hop);
         *manufacture_name = string_get_cstr(manufacture_code->name);
         break;
         }
     }
-  
     instance->cnt = decrypt & 0xFFFF;
 }
 
