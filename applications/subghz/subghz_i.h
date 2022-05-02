@@ -110,7 +110,7 @@ struct SubGhzTxRx {
     uint8_t hopper_timeout;
     uint8_t hopper_idx_frequency;
     SubGhzRxKeyState rx_key_state;
-    uint8_t codelength;
+    uint8_t codelength; // should this be in a different struct?
 };
 
 typedef struct SubGhzTxRx SubGhzTxRx;

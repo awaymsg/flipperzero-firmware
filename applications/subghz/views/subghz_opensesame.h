@@ -25,10 +25,3 @@ SubGhzOpenSesame* subghz_opensesame_alloc();
 void subghz_opensesame_free(SubGhzOpenSesame* subghz_opensesame);
 
 View* subghz_opensesame_get_view(SubGhzOpenSesame* subghz_opensesame);
-
-void subghz_opensesame_add_data_to_show(
-    SubGhzOpenSesame* subghz_opensesame,
-    const char* key_str,
-    const char* frequency_str,
-    const char* preset_str,
-    uint8_t show_button);
