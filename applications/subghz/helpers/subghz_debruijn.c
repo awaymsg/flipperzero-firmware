@@ -1,6 +1,6 @@
 #include "subghz_debruijn.h"
 
-#define BYTESIZE 3
+#define MAXBITCOUNT 3
 
 static void DeBruijnGen(uint32_t t, uint32_t p, DeBruijnData* debruijndata) {
     uint32_t i,j;
@@ -11,8 +11,8 @@ static void DeBruijnGen(uint32_t t, uint32_t p, DeBruijnData* debruijndata) {
                 debruijndata->byte = debruijndata->byte | debruijndata->a[i] << debruijndata->bitcount;
 
                 if (debruijndata->bitcount == 0) {
-                    string_cat_printf(debruijndata->debruijnstr, "%x", debruijndata->byte);
-                    debruijndata->bitcount = BYTESIZE + 1;
+                    string_cat_printf(debruijndata->debruijnstr, "%X", debruijndata->byte);
+                    debruijndata->bitcount = MAXBITCOUNT + 1;
                     debruijndata->byte = 0;
                 }
 
@@ -32,8 +32,8 @@ static void DeBruijnGen(uint32_t t, uint32_t p, DeBruijnData* debruijndata) {
     }
 
     if (t == 1 && p == 1) { // on base condition
-        if (debruijndata->bitcount != BYTESIZE) {
-            string_cat_printf(debruijndata->debruijnstr, "%x", debruijndata->byte);
+        if (debruijndata->bitcount != MAXBITCOUNT) {
+            string_cat_printf(debruijndata->debruijnstr, "%X", debruijndata->byte);
         }
 
         uint8_t extra = debruijndata->n / 4;
@@ -54,7 +54,7 @@ void DeBruijn(uint8_t codelength, string_t outputstr) {
     string_init(debruijndata->debruijnstr);
     debruijndata->a[0] = 0;
     debruijndata->n = codelength;
-    debruijndata->bitcount = BYTESIZE;
+    debruijndata->bitcount = MAXBITCOUNT;
     debruijndata->byte = 0;
 
     DeBruijnGen(1, 1, debruijndata);
