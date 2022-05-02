@@ -8,7 +8,7 @@ static void DeBruijnGen(uint32_t t, uint32_t p, DeBruijnData* debruijndata) {
     if (t > debruijndata->n) {
         if (debruijndata->n % p == 0) {
             for (i = 1; i <= p; i++) {
-                debruijndata->byte = debruijndata->byte | debruijndata->a[i] << debruijndata->bitcount;
+                debruijndata->byte |= debruijndata->a[i] << debruijndata->bitcount;
 
                 if (debruijndata->bitcount == 0) {
                     string_cat_printf(debruijndata->debruijnstr, "%X", debruijndata->byte);
