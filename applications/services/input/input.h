@@ -6,6 +6,7 @@
 #pragma once
 
 #include <furi_hal_resources.h>
+#include "input_settings.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -39,6 +40,13 @@ typedef struct {
     InputKey key;
     InputType type;
 } InputEvent;
+
+//for next step input structure globalization;
+//typedef struct Input {
+    //InputSettings* settings;
+    //InputType* type;
+    //InputEvent* event;
+//} Input;
 
 /** Get human readable input key name
  * @param key - InputKey

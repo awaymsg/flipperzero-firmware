@@ -9,8 +9,10 @@ typedef struct {
 #ifdef __cplusplus
 extern "C" {
 #endif
+
 void power_settings_load(PowerSettings* settings);
 void power_settings_save(const PowerSettings* settings);
+
 #ifdef __cplusplus
 }
 #endif

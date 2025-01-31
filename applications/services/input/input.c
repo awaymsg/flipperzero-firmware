@@ -6,6 +6,7 @@
 #include <furi.h>
 #include <cli/cli.h>
 #include <furi_hal_gpio.h>
+#include <furi_hal_vibro.h>
 
 #define INPUT_DEBOUNCE_TICKS_HALF (INPUT_DEBOUNCE_TICKS / 2)
 #define INPUT_PRESS_TICKS         150
@@ -79,8 +80,22 @@ const char* input_get_type_name(InputType type) {
     }
 }
 
+// allocate memory for input_settings structure
+static InputSettings* input_settings_alloc (void) {
+    InputSettings* input_settings = malloc(sizeof(InputSettings));
+    return input_settings;
+}
+
+//free memory from input_settings structure
+void input_settings_free (InputSettings* input_settings) {
+    free (input_settings);
+}
+
 int32_t input_srv(void* p) {
     UNUSED(p);
+
+    //define object input_settings and take memory for him
+    InputSettings* input_settings = input_settings_alloc();
 
     const FuriThreadId thread_id = furi_thread_get_current_id();
     FuriPubSub* event_pubsub = furi_pubsub_alloc();
@@ -149,6 +164,11 @@ int32_t input_srv(void* p) {
                 // Send Press/Release event
                 event.type = pin_states[i].state ? InputTypePress : InputTypeRelease;
                 furi_pubsub_publish(event_pubsub, &event);
+                if (input_settings->vibro_touch_level) {
+                    furi_hal_vibro_on(true);
+                    furi_delay_tick (30);
+                    furi_hal_vibro_on(false);
+                };
             }
         }
 
@@ -165,5 +185,7 @@ int32_t input_srv(void* p) {
         }
     }
 
+    // if we come here and ready exit from service (whats going on ??!!) then best practice is free memory
+    input_settings_free(input_settings);
     return 0;
 }
