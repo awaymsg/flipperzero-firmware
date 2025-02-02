@@ -7,12 +7,15 @@
 
 #include <furi_hal_resources.h>
 #include "input_settings.h"
+#include <storage/storage.h>
+
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 #define RECORD_INPUT_EVENTS            "input_events"
+#define RECORD_INPUT_SETTINGS          "input_settings"
 #define INPUT_SEQUENCE_SOURCE_HARDWARE (0u)
 #define INPUT_SEQUENCE_SOURCE_SOFTWARE (1u)
 
@@ -40,13 +43,6 @@ typedef struct {
     InputKey key;
     InputType type;
 } InputEvent;
-
-//for next step input structure globalization;
-//typedef struct Input {
-    //InputSettings* settings;
-    //InputType* type;
-    //InputEvent* event;
-//} Input;
 
 /** Get human readable input key name
  * @param key - InputKey

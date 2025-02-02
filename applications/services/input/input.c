@@ -13,6 +13,8 @@
 #define INPUT_LONG_PRESS_COUNTS   2
 #define INPUT_THREAD_FLAG_ISR     0x00000001
 
+#define TAG "Input"
+
 /** Input pin state */
 typedef struct {
     const InputPin* pin;
@@ -80,27 +82,76 @@ const char* input_get_type_name(InputType type) {
     }
 }
 
+
+// static void input_storage_callback(const void* message, void* context) {
+//     furi_assert(context);
+//     InputSettings* settings = context;
+//     const StorageEvent* event = message;
+//     UNUSED (settings);
+//     if(event->type == StorageEventTypeCardMount) {
+//     // furi_hal_vibro_on(true);
+//     // furi_delay_tick (100);
+//     // furi_hal_vibro_on(false);
+//     // furi_delay_tick (100);
+//     // furi_hal_vibro_on(true);
+//     // furi_delay_tick (100);
+//     // furi_hal_vibro_on(false);
+//     // furi_delay_tick (100);
+//     // furi_hal_vibro_on(true);
+//     // furi_delay_tick (100);
+//     // furi_hal_vibro_on(false);
+//     //input_settings_load(settings);
+//     }
+// }
+
+// // load inital settings from file for power service
+// static void input_init_settings(InputSettings* settings) {
+//     Storage* storage = furi_record_open(RECORD_STORAGE);
+//     furi_pubsub_subscribe(storage_get_pubsub(storage), input_storage_callback, settings);
+
+//     if(storage_sd_status(storage) != FSE_OK) {
+//         FURI_LOG_D(TAG, "SD Card not ready, skipping settings");
+//         //set default value
+//         settings->vibro_touch_level=0;
+//         //furi_record_close(RECORD_STORAGE);
+//         return;
+//     }
+    
+    // furi_hal_vibro_on(true);
+    // furi_delay_tick (100);
+    // furi_hal_vibro_on(false);
+    // furi_delay_tick (100);
+    // furi_hal_vibro_on(true);
+    // furi_delay_tick (100);
+    // furi_hal_vibro_on(false);
+
+//     input_settings_load(settings);
+//     furi_record_close(RECORD_STORAGE);
+// }
+
 // allocate memory for input_settings structure
 static InputSettings* input_settings_alloc (void) {
-    InputSettings* input_settings = malloc(sizeof(InputSettings));
-    return input_settings;
+    InputSettings* settings = malloc(sizeof(InputSettings));
+    return settings;
 }
 
 //free memory from input_settings structure
-void input_settings_free (InputSettings* input_settings) {
-    free (input_settings);
+void input_settings_free (InputSettings* settings) {
+    free (settings);
 }
 
 int32_t input_srv(void* p) {
     UNUSED(p);
 
-    //define object input_settings and take memory for him
-    InputSettings* input_settings = input_settings_alloc();
-
     const FuriThreadId thread_id = furi_thread_get_current_id();
     FuriPubSub* event_pubsub = furi_pubsub_alloc();
-    uint32_t counter = 1;
+    uint32_t counter = 1;    
     furi_record_create(RECORD_INPUT_EVENTS, event_pubsub);
+    
+    //define object input_settings, take memory load (or init) settings and create record for access to settings structure outside
+    InputSettings* settings = input_settings_alloc();
+    furi_record_create(RECORD_INPUT_SETTINGS, settings);
+    input_settings_load(settings);
 
 #ifdef INPUT_DEBUG
     furi_hal_gpio_init_simple(&gpio_ext_pa4, GpioModeOutputPushPull);
@@ -164,9 +215,10 @@ int32_t input_srv(void* p) {
                 // Send Press/Release event
                 event.type = pin_states[i].state ? InputTypePress : InputTypeRelease;
                 furi_pubsub_publish(event_pubsub, &event);
-                if (input_settings->vibro_touch_level) {
+                // do vibro if user setup vibro touch level in Settings-Input.
+                if (settings->vibro_touch_level) {
                     furi_hal_vibro_on(true);
-                    furi_delay_tick (30);
+                    furi_delay_tick (settings->vibro_touch_level);
                     furi_hal_vibro_on(false);
                 };
             }
@@ -185,7 +237,6 @@ int32_t input_srv(void* p) {
         }
     }
 
-    // if we come here and ready exit from service (whats going on ??!!) then best practice is free memory
-    input_settings_free(input_settings);
+
     return 0;
 }

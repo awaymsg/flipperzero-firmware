@@ -615,7 +615,7 @@ static Power* power_alloc(void) {
     free(settings);
 
     // auto_poweroff
-    //---define subscription to loader events message (info about started apps) and defina callback for this
+    //---define subscription to loader events message (info about started apps) and define callback for this
     Loader* loader = furi_record_open(RECORD_LOADER);
     furi_pubsub_subscribe(loader_get_pubsub(loader), power_loader_callback, power);
     power->input_events_pubsub = furi_record_open(RECORD_INPUT_EVENTS);
