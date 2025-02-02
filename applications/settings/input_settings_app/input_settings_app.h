@@ -11,14 +11,13 @@
 #include <furi_hal_vibro.h>
 #include <storage/storage.h>
 
-
 // input_settings_app stucture
 typedef struct {
-//InputService* inputservice; //link to input_sevice with they setings and events
-Gui* gui;
-ViewDispatcher* view_dispatcher;
-VariableItemList* variable_item_list;
-InputSettings* settings;
+    //InputService* inputservice; //link to input_sevice with they setings and events
+    Gui* gui;
+    ViewDispatcher* view_dispatcher;
+    VariableItemList* variable_item_list;
+    InputSettings* settings;
 } InputSettingsApp;
 
 // list of menu views for view dispatcher

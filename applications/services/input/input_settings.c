@@ -26,16 +26,16 @@ void input_settings_load(InputSettings* settings) {
         // take version from settings file metadata, if cant then break and fill settings with 0 and save to settings file;
         uint8_t version;
         if(!saved_struct_get_metadata(INPUT_SETTINGS_PATH, NULL, &version, NULL)) break;
-        
+
         // if config actual version - load it directly
-        if(version == INPUT_SETTINGS_VER) { 
+        if(version == INPUT_SETTINGS_VER) {
             success = saved_struct_load(
                 INPUT_SETTINGS_PATH,
                 settings,
                 sizeof(InputSettings),
                 INPUT_SETTINGS_MAGIC,
                 INPUT_SETTINGS_VER);
-        // if config previous version - load it and inicialize new settings
+            // if config previous version - load it and inicialize new settings
         } else if(
             version ==
             INPUT_SETTINGS_VER_0) { // if config previous version - load it and manual set new settings to inital value
@@ -75,11 +75,11 @@ void input_settings_save(const InputSettings* settings) {
         INPUT_SETTINGS_MAGIC,
         INPUT_SETTINGS_VER);
 
-        // debug log
-        // FURI_LOG_D(TAG,"SAVE");
-        // char buffer[12] = {};
-        // snprintf(buffer, sizeof(buffer), "%d",settings->vibro_touch_level);
-        // FURI_LOG_D(TAG,buffer);
+    // debug log
+    // FURI_LOG_D(TAG,"SAVE");
+    // char buffer[12] = {};
+    // snprintf(buffer, sizeof(buffer), "%d",settings->vibro_touch_level);
+    // FURI_LOG_D(TAG,buffer);
 
     if(!success) {
         FURI_LOG_E(TAG, "Failed to save file");

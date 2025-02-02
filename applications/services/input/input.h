@@ -9,7 +9,6 @@
 #include "input_settings.h"
 #include <storage/storage.h>
 
-
 #ifdef __cplusplus
 extern "C" {
 #endif

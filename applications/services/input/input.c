@@ -82,7 +82,6 @@ const char* input_get_type_name(InputType type) {
     }
 }
 
-
 // static void input_storage_callback(const void* message, void* context) {
 //     furi_assert(context);
 //     InputSettings* settings = context;
@@ -116,28 +115,28 @@ const char* input_get_type_name(InputType type) {
 //         //furi_record_close(RECORD_STORAGE);
 //         return;
 //     }
-    
-    // furi_hal_vibro_on(true);
-    // furi_delay_tick (100);
-    // furi_hal_vibro_on(false);
-    // furi_delay_tick (100);
-    // furi_hal_vibro_on(true);
-    // furi_delay_tick (100);
-    // furi_hal_vibro_on(false);
+
+// furi_hal_vibro_on(true);
+// furi_delay_tick (100);
+// furi_hal_vibro_on(false);
+// furi_delay_tick (100);
+// furi_hal_vibro_on(true);
+// furi_delay_tick (100);
+// furi_hal_vibro_on(false);
 
 //     input_settings_load(settings);
 //     furi_record_close(RECORD_STORAGE);
 // }
 
 // allocate memory for input_settings structure
-static InputSettings* input_settings_alloc (void) {
+static InputSettings* input_settings_alloc(void) {
     InputSettings* settings = malloc(sizeof(InputSettings));
     return settings;
 }
 
 //free memory from input_settings structure
-void input_settings_free (InputSettings* settings) {
-    free (settings);
+void input_settings_free(InputSettings* settings) {
+    free(settings);
 }
 
 int32_t input_srv(void* p) {
@@ -145,9 +144,9 @@ int32_t input_srv(void* p) {
 
     const FuriThreadId thread_id = furi_thread_get_current_id();
     FuriPubSub* event_pubsub = furi_pubsub_alloc();
-    uint32_t counter = 1;    
+    uint32_t counter = 1;
     furi_record_create(RECORD_INPUT_EVENTS, event_pubsub);
-    
+
     //define object input_settings, take memory load (or init) settings and create record for access to settings structure outside
     InputSettings* settings = input_settings_alloc();
     furi_record_create(RECORD_INPUT_SETTINGS, settings);
@@ -216,9 +215,9 @@ int32_t input_srv(void* p) {
                 event.type = pin_states[i].state ? InputTypePress : InputTypeRelease;
                 furi_pubsub_publish(event_pubsub, &event);
                 // do vibro if user setup vibro touch level in Settings-Input.
-                if (settings->vibro_touch_level) {
+                if(settings->vibro_touch_level) {
                     furi_hal_vibro_on(true);
-                    furi_delay_tick (settings->vibro_touch_level);
+                    furi_delay_tick(settings->vibro_touch_level);
                     furi_hal_vibro_on(false);
                 };
             }
@@ -236,7 +235,6 @@ int32_t input_srv(void* p) {
             furi_thread_flags_wait(INPUT_THREAD_FLAG_ISR, FuriFlagWaitAny, FuriWaitForever);
         }
     }
-
 
     return 0;
 }
