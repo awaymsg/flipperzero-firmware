@@ -90,7 +90,6 @@ void input_settings_app_free(InputSettingsApp* app) {
 
     // Records
     furi_record_close(RECORD_GUI);
-    //furi_record_close(RECORD_INPUT_EVENTS);
     free(app->settings);
     free(app);
 }

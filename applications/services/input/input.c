@@ -82,52 +82,6 @@ const char* input_get_type_name(InputType type) {
     }
 }
 
-// static void input_storage_callback(const void* message, void* context) {
-//     furi_assert(context);
-//     InputSettings* settings = context;
-//     const StorageEvent* event = message;
-//     UNUSED (settings);
-//     if(event->type == StorageEventTypeCardMount) {
-//     // furi_hal_vibro_on(true);
-//     // furi_delay_tick (100);
-//     // furi_hal_vibro_on(false);
-//     // furi_delay_tick (100);
-//     // furi_hal_vibro_on(true);
-//     // furi_delay_tick (100);
-//     // furi_hal_vibro_on(false);
-//     // furi_delay_tick (100);
-//     // furi_hal_vibro_on(true);
-//     // furi_delay_tick (100);
-//     // furi_hal_vibro_on(false);
-//     //input_settings_load(settings);
-//     }
-// }
-
-// // load inital settings from file for power service
-// static void input_init_settings(InputSettings* settings) {
-//     Storage* storage = furi_record_open(RECORD_STORAGE);
-//     furi_pubsub_subscribe(storage_get_pubsub(storage), input_storage_callback, settings);
-
-//     if(storage_sd_status(storage) != FSE_OK) {
-//         FURI_LOG_D(TAG, "SD Card not ready, skipping settings");
-//         //set default value
-//         settings->vibro_touch_level=0;
-//         //furi_record_close(RECORD_STORAGE);
-//         return;
-//     }
-
-// furi_hal_vibro_on(true);
-// furi_delay_tick (100);
-// furi_hal_vibro_on(false);
-// furi_delay_tick (100);
-// furi_hal_vibro_on(true);
-// furi_delay_tick (100);
-// furi_hal_vibro_on(false);
-
-//     input_settings_load(settings);
-//     furi_record_close(RECORD_STORAGE);
-// }
-
 // allocate memory for input_settings structure
 static InputSettings* input_settings_alloc(void) {
     InputSettings* settings = malloc(sizeof(InputSettings));
@@ -147,7 +101,7 @@ int32_t input_srv(void* p) {
     uint32_t counter = 1;
     furi_record_create(RECORD_INPUT_EVENTS, event_pubsub);
 
-    //define object input_settings, take memory load (or init) settings and create record for access to settings structure outside
+    //define object input_settings, take memory load (or init) settings and create record for access to settings structure from outside
     InputSettings* settings = input_settings_alloc();
     furi_record_create(RECORD_INPUT_SETTINGS, settings);
     input_settings_load(settings);
