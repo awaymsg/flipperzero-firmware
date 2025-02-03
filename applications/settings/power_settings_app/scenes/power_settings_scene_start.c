@@ -15,10 +15,11 @@ const char* const auto_poweroff_delay_text[AUTO_POWEROFF_DELAY_COUNT] =
 const uint32_t auto_poweroff_delay_value[AUTO_POWEROFF_DELAY_COUNT] =
     {0, 300000, 600000, 900000, 1800000, 2700000, 3600000, 5400000};
 
-#define CHARGE_SUPRESS_PERCENT_COUNT 2
-const char* const charge_supress_percent_text[CHARGE_SUPRESS_PERCENT_COUNT] = {"OFF", "80%"};
+#define CHARGE_SUPRESS_PERCENT_COUNT 6
+const char* const charge_supress_percent_text[CHARGE_SUPRESS_PERCENT_COUNT] =
+    {"OFF", "90%", "85%", "80%", "75%", "70%"};
 
-const uint32_t charge_supress_percent_value[CHARGE_SUPRESS_PERCENT_COUNT] = {0, 80};
+const uint32_t charge_supress_percent_value[CHARGE_SUPRESS_PERCENT_COUNT] = {0, 90, 85, 80, 75, 70};
 
 // change variable_item_list visible text and charge_supress_percent_settings when user change item in variable_item_list
 static void power_settings_scene_start_charge_supress_percent_changed(VariableItem* item) {
@@ -72,7 +73,7 @@ void power_settings_scene_start_on_enter(void* context) {
 
     item = variable_item_list_add(
         variable_item_list,
-        "Safe charging",
+        "Safe Charging",
         CHARGE_SUPRESS_PERCENT_COUNT,
         power_settings_scene_start_charge_supress_percent_changed,
         app);
