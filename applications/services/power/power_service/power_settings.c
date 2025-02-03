@@ -47,7 +47,6 @@ void power_settings_load(PowerSettings* settings) {
             // new settings initialization
             if(success) {
                 settings->charge_supress_percent = 0;
-                settings->charge_is_supressed = false;
             }
 
             free(settings_previous);
