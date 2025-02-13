@@ -5,6 +5,7 @@
 * Power: Option to limit battery charging (suppress charging on selected charge level) (PR #867 | by @Dmitry422)
 * Apps: **Check out more Apps updates and fixes by following** [this link](https://github.com/xMasterX/all-the-plugins/commits/dev)
 ## Other changes
+* Anims: Disable winter anims
 * OFW: Infrared: increase max carrier limit
 * OFW: Ensure that `furi_record_create` is passed a non-NULL data pointer
 * OFW: Update mbedtls & expose AES
