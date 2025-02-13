@@ -1,11 +1,16 @@
 ## Main changes
-- Current API: 79.4
+- Current API: 80.1
 * OFW: LFRFID - **EM4305 support**
+* OFW: NFC - Added naming for DESFire cards + fix MF3ICD40 cards unable to be read
+* Apps: Add FindMyFlipper to system apps and allow autostart on system boot [app by @MatthewKuKanich](https://github.com/MatthewKuKanich/FindMyFlipper) and autoloader by @Willy-JL - to use app please check how to add keys in [app repo](https://github.com/MatthewKuKanich/FindMyFlipper)
 * Input: Vibro on Button press option (PR #867 | by @Dmitry422)
 * Power: Option to limit battery charging (suppress charging on selected charge level) (PR #867 | by @Dmitry422)
 * Apps: **Check out more Apps updates and fixes by following** [this link](https://github.com/xMasterX/all-the-plugins/commits/dev)
 ## Other changes
 * Anims: Disable winter anims
+* OFW: nfc: Enable MFUL sync poller to be provided with passwords
+* OFW: ST25TB poller mode check
+* OFW: JS features & bugfixes (SDK 0.2) **Existing Widget JS module was removed and replaced with new ofw gui/widget module, old apps using widget may be incompatible now!**
 * OFW: Infrared: increase max carrier limit
 * OFW: Ensure that `furi_record_create` is passed a non-NULL data pointer
 * OFW: Update mbedtls & expose AES
