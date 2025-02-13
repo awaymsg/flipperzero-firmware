@@ -1,5 +1,5 @@
 ## Main changes
-- Current API: 79.3
+- Current API: 79.4
 * OFW: LFRFID - **EM4305 support**
 * Apps: **Check out more Apps updates and fixes by following** [this link](https://github.com/xMasterX/all-the-plugins/commits/dev)
 ## Other changes

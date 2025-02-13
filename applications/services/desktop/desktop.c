@@ -149,7 +149,7 @@ static bool desktop_custom_event_callback(void* context, uint32_t event) {
             if((desktop->settings.usb_inhibit_auto_lock) && (furi_hal_usb_is_locked())) {
                 return (0);
             }
-            
+
             desktop_lock(desktop);
         }
     } else if(event == DesktopGlobalSaveSettings) {
