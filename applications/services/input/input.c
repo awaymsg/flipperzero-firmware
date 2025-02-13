@@ -82,17 +82,6 @@ const char* input_get_type_name(InputType type) {
     }
 }
 
-// allocate memory for input_settings structure
-static InputSettings* input_settings_alloc(void) {
-    InputSettings* settings = malloc(sizeof(InputSettings));
-    return settings;
-}
-
-//free memory from input_settings structure
-void input_settings_free(InputSettings* settings) {
-    free(settings);
-}
-
 int32_t input_srv(void* p) {
     UNUSED(p);
 
@@ -102,7 +91,7 @@ int32_t input_srv(void* p) {
     furi_record_create(RECORD_INPUT_EVENTS, event_pubsub);
 
     //define object input_settings, take memory load (or init) settings and create record for access to settings structure from outside
-    InputSettings* settings = input_settings_alloc();
+    InputSettings* settings = malloc(sizeof(InputSettings));
     furi_record_create(RECORD_INPUT_SETTINGS, settings);
     input_settings_load(settings);
 

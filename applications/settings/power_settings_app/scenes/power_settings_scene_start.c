@@ -73,7 +73,7 @@ void power_settings_scene_start_on_enter(void* context) {
 
     item = variable_item_list_add(
         variable_item_list,
-        "Safe Charging",
+        "Limit Charge",
         CHARGE_SUPRESS_PERCENT_COUNT,
         power_settings_scene_start_charge_supress_percent_changed,
         app);

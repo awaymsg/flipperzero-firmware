@@ -42,8 +42,6 @@ static uint32_t input_settings_app_exit(void* context) {
 
 InputSettingsApp* input_settings_app_alloc(void) {
     InputSettingsApp* app = malloc(sizeof(InputSettingsApp));
-    //app->inputservice = furi_record_open(RECORD_INPUT_EVENTS);
-
     app->gui = furi_record_open(RECORD_GUI);
 
     app->settings = malloc(sizeof(InputSettings));
@@ -58,7 +56,7 @@ InputSettingsApp* input_settings_app_alloc(void) {
 
     item = variable_item_list_add(
         app->variable_item_list,
-        "VibroTouchLevel",
+        "Buttons Vibro",
         VIBRO_TOUCH_LEVEL_COUNT,
         input_settings_vibro_touch_level_changed,
         app);
@@ -100,12 +98,6 @@ int32_t input_settings_app(void* p) {
     InputSettingsApp* app = input_settings_app_alloc();
 
     view_dispatcher_run(app->view_dispatcher);
-
-    // // debug code
-    // FURI_LOG_D(TAG,"Vibro Touch level before save");
-    // char buffer[12] = {};
-    // snprintf(buffer, sizeof(buffer), "%d",app->settings->vibro_touch_level);
-    // FURI_LOG_D(TAG,buffer);
 
     //save current settings;
     input_settings_save(app->settings);
