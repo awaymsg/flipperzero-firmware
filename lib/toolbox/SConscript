@@ -40,7 +40,6 @@ env.Append(
         File("pulse_protocols/pulse_glue.h"),
         File("md5_calc.h"),
         File("varint.h"),
-        File("run_parallel.h"),
     ],
 )
 

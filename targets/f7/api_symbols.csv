@@ -241,7 +241,6 @@ Header,+,lib/toolbox/pipe.h,,
 Header,+,lib/toolbox/pretty_format.h,,
 Header,+,lib/toolbox/protocols/protocol_dict.h,,
 Header,+,lib/toolbox/pulse_protocols/pulse_glue.h,,
-Header,+,lib/toolbox/run_parallel.h,,
 Header,+,lib/toolbox/saved_struct.h,,
 Header,+,lib/toolbox/simple_array.h,,
 Header,+,lib/toolbox/stream/buffered_file_stream.h,,
@@ -3156,7 +3155,6 @@ Function,+,rpc_system_app_set_callback,void,"RpcAppSystem*, RpcAppSystemCallback
 Function,+,rpc_system_app_set_error_code,void,"RpcAppSystem*, uint32_t"
 Function,+,rpc_system_app_set_error_text,void,"RpcAppSystem*, const char*"
 Function,-,rpmatch,int,const char*
-Function,+,run_parallel,void,"FuriThreadCallback, void*, uint32_t"
 Function,+,saved_struct_get_metadata,_Bool,"const char*, uint8_t*, uint8_t*, size_t*"
 Function,+,saved_struct_load,_Bool,"const char*, void*, size_t, uint8_t, uint8_t"
 Function,+,saved_struct_save,_Bool,"const char*, const void*, size_t, uint8_t, uint8_t"
