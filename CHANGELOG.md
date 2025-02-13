@@ -1,6 +1,8 @@
 ## Main changes
 - Current API: 79.4
 * OFW: LFRFID - **EM4305 support**
+* Input: Vibro on Button press option (PR #867 | by @Dmitry422)
+* Power: Option to limit battery charging (suppress charging on selected charge level) (PR #867 | by @Dmitry422)
 * Apps: **Check out more Apps updates and fixes by following** [this link](https://github.com/xMasterX/all-the-plugins/commits/dev)
 ## Other changes
 * OFW: Infrared: increase max carrier limit
