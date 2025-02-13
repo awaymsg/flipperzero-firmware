@@ -9,8 +9,9 @@
 #define POWER_SETTINGS_VER_1 (1) // Previous version number
 #define POWER_SETTINGS_VER   (2) // New version number
 
-#define POWER_SETTINGS_PATH  INT_PATH(POWER_SETTINGS_FILE_NAME)
-#define POWER_SETTINGS_MAGIC (0x18)
+#define POWER_SETTINGS_PATH     INT_PATH(POWER_SETTINGS_FILE_NAME)
+#define POWER_SETTINGS_MAGIC_V1 (0x19)
+#define POWER_SETTINGS_MAGIC    (0x21)
 
 typedef struct {
     uint32_t auto_poweroff_delay_ms;
@@ -42,10 +43,11 @@ void power_settings_load(PowerSettings* settings) {
                 POWER_SETTINGS_PATH,
                 settings_previous,
                 sizeof(PowerSettingsPrevious),
-                POWER_SETTINGS_MAGIC,
+                POWER_SETTINGS_MAGIC_V1,
                 POWER_SETTINGS_VER_1);
             // new settings initialization
             if(success) {
+                settings->auto_poweroff_delay_ms = settings_previous->auto_poweroff_delay_ms;
                 settings->charge_supress_percent = 0;
             }
 
