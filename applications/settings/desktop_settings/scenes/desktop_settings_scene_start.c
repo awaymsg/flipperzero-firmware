@@ -52,7 +52,7 @@ const char* const usb_inhibit_auto_lock_delay_text[USB_INHIBIT_AUTO_LOCK_DELAY_C
     "ON",
 };
 
-const uint32_t usb_inhibit_auto_lock_delay_value[USB_INHIBIT_AUTO_LOCK_DELAY_COUNT] = {0,1};
+const uint32_t usb_inhibit_auto_lock_delay_value[USB_INHIBIT_AUTO_LOCK_DELAY_COUNT] = {0, 1};
 
 #define CLOCK_ENABLE_COUNT 2
 const char* const clock_enable_text[CLOCK_ENABLE_COUNT] = {
