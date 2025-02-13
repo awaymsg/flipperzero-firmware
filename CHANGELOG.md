@@ -1,34 +1,12 @@
 ## Main changes
 - Current API: 79.3
-* SubGHz: Jolly Motors support (with add manually) (Thanks @pkooiman !)
-* Power: Auto Power Off Timer (by @Dmitry422 with some fixes by @xMasterX)
-* OFW: **Fix lost BadBLE keystrokes**
-* OFW: **Add the ability to send a signal once via RPC**
-* OFW PR 4070: Infrared: increase max carrier limit (by @skotopes)
-* OFW PR 4025: Increase system stack's reserved memory size (Fix USB UART Bridge Crash) (by @Astrrra)
-* OFW: merged gsurkov/vcp_break_support branch for usb uart bridge (WIP!!!)
+* OFW: LFRFID - **EM4305 support**
 * Apps: **Check out more Apps updates and fixes by following** [this link](https://github.com/xMasterX/all-the-plugins/commits/dev)
 ## Other changes
-* Power & Desktop: Add input events sub check & use event system for auto power off
-* OFW: Rename FuriHalDebuging.md to FuriHalDebugging.md
-* OFW: nfc: Fix MIFARE Plus detection
-* OFW: u2f: Fix leaking message digest contexts
-* OFW: nfc: Fix MFUL PWD_AUTH command creation
-* OFW: Bump cross-spawn in /applications/system/js_app/packages/create-fz-app
-* OFW: **Pipe** (new api funcs)
-* OFW: Fix invalid path errors while deploying SDK by enforcing toolchain to use UTF-8 on initial SDK Extraction
-* OFW: **Added flipper_format_write_empty_line(...)**
-* OFW: Fix skylander ID reading
-* OFW: Work around incorrect serial port handling by the OS
-* OFW: Add winter animations 
-* OFW: FBT: Don't lint JS packages
-* OFW: **Loader: Fix BusFault in handling of OOM** (was already included in previous UL release)
-* OFW: **NFC Fix ISO15693 stucking in wrong mode.**
-* OFW: Update `infrared_test.c` reference
-* OFW: **FuriThread stdin**
-* OFW: NFC: Plantain parser Last payment amount fix 
-* OFW: NFC clipper: BART station ids for San Lorenzo, Bay Fair
-* OFW: Fix typo for mf_classic_key_cahce_get_next_key() function
+* OFW: Infrared: increase max carrier limit
+* OFW: Ensure that `furi_record_create` is passed a non-NULL data pointer
+* OFW: Update mbedtls & expose AES
+* OFW: Add the Showtime animation
 <br><br>
 #### Known NFC post-refactor regressions list: 
 - Mifare Mini clones reading is broken (original mini working fine) (OFW)
