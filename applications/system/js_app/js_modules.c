@@ -277,7 +277,6 @@ static const char* extra_features[] = {
     "subghz",
     "usbdisk",
     "vgm",
-    "widget",
 };
 
 /**
