@@ -7,15 +7,6 @@
 	<a href="https://discord.unleashedflip.com">
 		<img src="https://img.shields.io/discord/937479784148115456?style=flat-square&logo=discord&label=Discord&color=%237289DA&link=https%3A%2F%2Fdiscord.unleashedflip.com%2F" alt="Discord server"/>
 	</a>
-	<a href="https://t.me/flipperzero_unofficial">
-		<img src="https://img.shields.io/endpoint?label=EN%20Channel&style=flat-square&url=https%3A%2F%2Fmogyo.ro%2Fquart-apis%2Ftgmembercount%3Fchat_id%3Dflipperzero_unofficial" alt="EN TG channel"/>
-	</a>
-	<a href="https://t.me/flipperzero_unofficial_ru">
-		<img src="https://img.shields.io/endpoint?label=RU%20Channel&style=flat-square&url=https%3A%2F%2Fmogyo.ro%2Fquart-apis%2Ftgmembercount%3Fchat_id%3Dflipperzero_unofficial_ru" alt="RU TG channel"/>	
-	</a>
-	<a href="https://t.me/flipperzero_unofficial_ua">
-		<img src="https://img.shields.io/endpoint?label=UA%20Channel&style=flat-square&url=https%3A%2F%2Fmogyo.ro%2Fquart-apis%2Ftgmembercount%3Fchat_id%3Dflipperzero_unofficial_ua" alt="UA TG channel"/>
-	</a>
 </div>
 
 ### Welcome to the Flipper Zero Unleashed Firmware repo! 
