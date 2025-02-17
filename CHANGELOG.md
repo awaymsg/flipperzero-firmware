@@ -8,6 +8,7 @@
 * Apps: **Check out more Apps updates and fixes by following** [this link](https://github.com/xMasterX/all-the-plugins/commits/dev)
 ## Other changes
 * Anims: Disable winter anims
+* OFW: Furi, USB, BLE, Debug: various bug fixes and improvements
 * OFW: EventLoop unsubscribe fix
 * OFW: nfc: Enable MFUL sync poller to be provided with passwords
 * OFW: ST25TB poller mode check
