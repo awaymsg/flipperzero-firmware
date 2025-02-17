@@ -8,6 +8,7 @@
 * Apps: **Check out more Apps updates and fixes by following** [this link](https://github.com/xMasterX/all-the-plugins/commits/dev)
 ## Other changes
 * Anims: Disable winter anims
+* OFW: EventLoop unsubscribe fix
 * OFW: nfc: Enable MFUL sync poller to be provided with passwords
 * OFW: ST25TB poller mode check
 * OFW: JS features & bugfixes (SDK 0.2) **Existing Widget JS module was removed and replaced with new ofw gui/widget module, old apps using widget may be incompatible now!**
