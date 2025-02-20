@@ -1,6 +1,7 @@
 ## Main changes
 - Current API: 80.2
 * SubGHz: Fix GangQi protocol (by @DoberBit and @mishamyte (who spent 2 weeks on this))
+* SubGHz: Came Atomo button hold simulation with full cycle simulation (to allow proper pairing with receiver)
 * OFW: LFRFID - **EM4305 support**
 * OFW: Universal IR signal selection
 * OFW: BadUSB: Mouse control 
