@@ -42,7 +42,6 @@ Before getting started:
 - **FAQ:**  
   Find answers to common questions in the [FAQ](/documentation/FAQ.md)
 
-<br/>
 
 ## 📦 Releases
 
@@ -57,7 +56,6 @@ Before getting started:
 - Web site: https://dev.unleashedflip.com
 - <img src="https://github.com/badges/shields/assets/10694593/c5c5acc3-f434-4a8d-a834-6d94a7ffb45a" alt="Telegram" title="Telegram" width="14" height="16"> Telegram: <a href="https://t.me/kotnehleb">t.me/kotnehleb</a>
 
-<br/>
 
 ## 🆕 What's New
 
@@ -198,7 +196,6 @@ Thanks to Official team (to their SubGHz Developer, Skorp) for implementing supp
 - Nice ON2E (Nice One) -> How to create new remote - [instructions](https://github.com/DarkFlippers/unleashed-firmware/blob/dev/documentation/SubGHzRemoteProg.md)
 </details>
 
-<br/>
 
 ## ❤️ Please support development of the project
 
@@ -231,7 +228,6 @@ You can support us by using links or addresses below:
 |XMR|(Monero)|<div align="center"><a href="https://github.com/user-attachments/assets/96186c06-61e7-4b4d-b716-6eaf1779bfd8"><img src="https://github.com/user-attachments/assets/da3a864d-d1c7-42cc-8a86-6fcaf26663ec" alt="QR image"/></a></div>|`41xUz92suUu1u5Mu4qkrcs52gtfpu9rnZRdBpCJ244KRHf6xXSvVFevdf2cnjS7RAeYr5hn9MsEfxKoFDRSctFjG5fv1Mhn`|
 |TON||<div align="center"><a href="https://github.com/user-attachments/assets/92a57e57-7462-42b7-a342-6f22c6e600c1"><img src="https://github.com/user-attachments/assets/da3a864d-d1c7-42cc-8a86-6fcaf26663ec" alt="QR image"/></a></div>|`UQCOqcnYkvzOZUV_9bPE_8oTbOrOF03MnF-VcJyjisTZmsxa`|
 
-<br/>
 
 ## 📱 Community Apps
 
@@ -246,13 +242,11 @@ Enhance your Flipper Zero with apps and plugins created by the community:
 - **Official Apps Catalog:**  
   Browse the official Flipper Zero Apps Catalog on the [web](https://lab.flipper.net/apps) or via the [mobile app](https://flipperzero.one/downloads).
 
-<br/>
 
 ## 📁 Where I can find IR, Sub-GHz, ... files, DBs, and other stuff?
 - [UberGuidoZ Playground - Large collection of files - Github](https://github.com/UberGuidoZ/Flipper) 
 - [Awesome Flipper Zero - Github](https://github.com/djsime1/awesome-flipperzero)
 
-<br/>
 
 ## 📘 Instructions
 
@@ -291,7 +285,6 @@ Enhance your Flipper Zero with apps and plugins created by the community:
 - How to Upload `.bin` to ESP32/ESP8266: [Windows](https://github.com/SequoiaSan/Guide-How-To-Upload-bin-to-ESP8266-ESP32) | [FAP "ESP flasher"](https://github.com/0xchocolate/flipperzero-esp-flasher)
 - [GPIO] SentrySafe plugin: [How to use](https://github.com/DarkFlippers/unleashed-firmware/blob/dev/documentation/SentrySafe.md)
 
-<br/>
 
 ## 👨‍💻 Firmware & Development
 
@@ -315,7 +308,6 @@ Enhance your Flipper Zero with apps and plugins created by the community:
 
 Also, pay attention to the `ReadMe.md` files inside those directories.**
 
-<br/>
 
 ## 🔗 Links
 - **Unleashed web page:** [flipperunleashed.com](https://flipperunleashed.com)
