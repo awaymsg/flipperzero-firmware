@@ -1,6 +1,9 @@
 ## Main changes
-- Current API: 80.1
+- Current API: 80.2
+* SubGHz: Fix GangQi protocol (by @DoberBit and @mishamyte (who spent 2 weeks on this))
 * OFW: LFRFID - **EM4305 support**
+* OFW: Universal IR signal selection
+* OFW: BadUSB: Mouse control 
 * OFW: NFC - Added naming for DESFire cards + fix MF3ICD40 cards unable to be read
 * Apps: Add FindMyFlipper to system apps and allow autostart on system boot [app by @MatthewKuKanich](https://github.com/MatthewKuKanich/FindMyFlipper) and autoloader by @Willy-JL - to use app please check how to add keys in [app repo](https://github.com/MatthewKuKanich/FindMyFlipper)
 * Input: Vibro on Button press option (PR #867 | by @Dmitry422)
@@ -8,6 +11,10 @@
 * Apps: **Check out more Apps updates and fixes by following** [this link](https://github.com/xMasterX/all-the-plugins/commits/dev)
 ## Other changes
 * Anims: Disable winter anims
+* OFW: Fixed repeat in subghz tx_from_file command 
+* OFW: LFRFID: Noralsy Format/Brand
+* OFW: Faster di card reading
+* OFW: vscode: disabled auto-update for clangd since correct version is in the toolchain
 * OFW: Furi, USB, BLE, Debug: various bug fixes and improvements
 * OFW: EventLoop unsubscribe fix
 * OFW: nfc: Enable MFUL sync poller to be provided with passwords
