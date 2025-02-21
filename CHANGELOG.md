@@ -1,5 +1,5 @@
 ## Main changes
-- Current API: 80.2
+- Current API: 81.1
 * SubGHz: Fix GangQi protocol (by @DoberBit and @mishamyte (who spent 2 weeks on this))
 * SubGHz: Came Atomo button hold simulation with full cycle simulation (to allow proper pairing with receiver)
 * OFW: LFRFID - **EM4305 support**
@@ -12,6 +12,12 @@
 * Apps: **Check out more Apps updates and fixes by following** [this link](https://github.com/xMasterX/all-the-plugins/commits/dev)
 ## Other changes
 * Anims: Disable winter anims
+* OFW: GUI: Widget view extra options for JS 
+* OFW: Update heap implementation
+* OFW: Updated Button Panel
+* OFW: UART framing mode selection
+* OFW: gpio: clear irq status before calling user handler
+* OFW: Fix 5V on GPIO
 * OFW: Fixed repeat in subghz tx_from_file command 
 * OFW: LFRFID: Noralsy Format/Brand
 * OFW: Faster di card reading
