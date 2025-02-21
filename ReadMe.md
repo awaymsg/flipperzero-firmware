@@ -27,6 +27,8 @@ This firmware is a fork of the original (OFW) version of [flipperdevices/flipper
 > We do not condone unlawful behavior and strongly encourage you to use it only within the bounds of the law.
 >
 > This project is developed independently and is not affiliated with Flipper Devices.
+>
+> Also be aware, DarkFlippers/unleashed-firmware is the only official page of the project, there is no paid, premium or closed source versions and if someone contacts you and say they are from our team and try to offer something like that - they are scammers, block that users ASAP
 
 <br/>
 
@@ -149,7 +151,7 @@ Thanks to Official team (to their SubGHz Developer, Skorp) for implementing supp
 > [!NOTE]
 > Not ALL Keeloq systems are supported for decoding or emulation!
 > <details>
-> <summary><strong>Supported manufacturers include</strong></summary>
+> <summary><strong>Supported keeloq manufacturers include</strong></summary>
 > <br/>
 >
 > | Column 1          | Column 2     | Column 3         | Column 4          | Column 5               |
@@ -165,6 +167,7 @@ Thanks to Official team (to their SubGHz Developer, Skorp) for implementing supp
 > | Cenmax_St-5       | Faraon       | Leopard          | Pantera_CLK       | Tomahawk_TZ-9030       |
 > | Cenmax_St-7       | Genius_Bravo | Magic_1          | Pantera_XS/Jaguar | Tomahawk_Z,X_3-5       |
 > | Centurion         | Gibidi       | Magic_2          | Partisan_RX       | ZX-730-750-1055        |
+> | Monarch           | Centurion    | Jolly Motors     |                   |  			             |
 > </details>
 
 <br/>
@@ -179,7 +182,7 @@ Thanks to Official team (to their SubGHz Developer, Skorp) for implementing supp
 - Hay21 (dynamic 21 bit) with button parsing
 - Nero Radio 57bit (+ 56bit support)
 - CAME 12bit/24bit encoder fixes (Fixes are now merged in OFW)
-- Keeloq: Dea Mio, Genius Bravo, GSN, HCS101, AN-Motors, JCM Tech, MHouse, Nice Smilo, DTM Neo, FAAC RC,XT, Mutancode, Normstahl, Beninca + Allmatic, Stilmatic, CAME Space, Aprimatic (model TR and similar), Centurion Nova (thanks Carlos !), Hormann EcoStar, Novoferm, Sommer, Monarch (thanks @ashphx !)
+- Keeloq: Dea Mio, Genius Bravo, GSN, HCS101, AN-Motors, JCM Tech, MHouse, Nice Smilo, DTM Neo, FAAC RC,XT, Mutancode, Normstahl, Beninca + Allmatic, Stilmatic, CAME Space, Aprimatic (model TR and similar), Centurion Nova (thanks Carlos !), Hormann EcoStar, Novoferm, Sommer, Monarch (thanks @ashphx !), Jolly Motors (thanks @pkooiman !)
 </details>
 
 <details>
