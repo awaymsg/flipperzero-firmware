@@ -152,10 +152,20 @@ Thanks to Official team (to their SubGHz Developer, Skorp) for implementing supp
 > <summary><strong>Supported manufacturers include</strong></summary>
 > <br/>
 >
-> ```
-> DoorHan, Alligator, Stilmatic, Mongoose, SL_A6-A9/Tomahawk_9010, Pantera, SL_A2-A4, Cenmax_St-5, SL_B6,B9_dop, Harpoon, Tomahawk_TZ-9030, Tomahawk_Z,X_3-5, Cenmax_St-7, Sheriff, Pantera_CLK, Cenmax, Alligator_S-275, Guard_RF-311A, Partisan_RX, APS-1100_APS-2550, Pantera_XS/Jaguar, NICE_Smilo, NICE_MHOUSE, Dea_Mio, Genius_Bravo, FAAC_RC,XT, FAAC_SLH, BFT, Came_Space, DTM_Neo, GSN, Beninca, Elmes_Poland, IronLogic, Comunello, Sommer(fsk476), Normstahl, KEY, JCM_Tech, EcoStar, Gibidi, Aprimatic, Kingates_Stylo4k, Centurion, KGB/Subaru, Magic_1, Magic_2, Magic_3, Magic_4, Teco, Mutanco_Mutancode, Leopard, Faraon, Reff, ZX-730-750-1055
-> ```
-</details>
+> | Column 1          | Column 2     | Column 3         | Column 4          | Column 5               |
+> |-------------------|--------------|------------------|-------------------|------------------------|
+> | Alligator         | Comunello    | GSN              | Magic_3           | Reff                   |
+> | Alligator_S-275   | Dea_Mio      | Guard_RF-311A    | Magic_4           | Sheriff                |
+> | APS-1100_APS-2550 | DTM_Neo      | Harpoon          | Mongoose          | SL_A2-A4               |
+> | Aprimatic         | DoorHan      | IronLogic        | Mutanco_Mutancode | SL_A6-A9/Tomahawk_9010 |
+> | Beninca           | EcoStar      | JCM_Tech         | NICE_MHOUSE       | SL_B6,B9_dop           |
+> | BFT               | Elmes_Poland | KEY              | NICE_Smilo        | Sommer(fsk476)         |
+> | Came_Space        | FAAC_RC,XT   | Kingates_Stylo4k | Normstahl         | Stilmatic              |
+> | Cenmax            | FAAC_SLH     | KGB/Subaru       | Pantera           | Teco                   |
+> | Cenmax_St-5       | Faraon       | Leopard          | Pantera_CLK       | Tomahawk_TZ-9030       |
+> | Cenmax_St-7       | Genius_Bravo | Magic_1          | Pantera_XS/Jaguar | Tomahawk_Z,X_3-5       |
+> | Centurion         | Gibidi       | Magic_2          | Partisan_RX       | ZX-730-750-1055        |
+> </details>
 
 <br/>
 
