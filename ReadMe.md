@@ -4,20 +4,10 @@
     </a>
 </h3>
 
-<a href="https://t.me/flipperzero_unofficial" style="text-decoration: none;">
-   <img src="https://img.shields.io/endpoint?color=neon&style=flat&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fflipperzero_unofficial" alt="English Telegram Chat"/>
-</a>
-<a href="https://t.me/flipperzero_unofficial_ru" style="text-decoration: none;">
-   <img src="https://img.shields.io/endpoint?color=neon&style=flat&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fflipperzero_unofficial_ru" alt="Russian Telegram Chat"/>  
-</a>
-<a href="https://t.me/flipperzero_unofficial_ua" style="text-decoration: none;">
-   <img src="https://img.shields.io/endpoint?color=neon&style=flat&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fflipperzero_unofficial_ua" alt="Ukraine Telegram Chat"/>  
-</a>
-
-<a href="https://discord.unleashedflip.com" style="text-decoration: none;">
-   <img src="https://img.shields.io/discord/937479784148115456?style=flat&logo=discord&label=Discord&color=%237289DA&link=https%3A%2F%2Fdiscord.unleashedflip.com%2F" alt="Discord server"/>  
-</a>
-
+[![English Telegram Chat](https://img.shields.io/endpoint?color=neon&style=flat&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fflipperzero_unofficial)](https://t.me/flipperzero_unofficial)
+[![Russian Telegram Chat](https://img.shields.io/endpoint?color=neon&style=flat&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fflipperzero_unofficial_ru)](https://t.me/flipperzero_unofficial_ru)
+[![Ukraine Telegram Chat](https://img.shields.io/endpoint?color=neon&style=flat&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fflipperzero_unofficial_ua)](https://t.me/flipperzero_unofficial_ua)
+[![Discord Server](https://img.shields.io/discord/937479784148115456?style=flat&logo=discord&label=Discord&color=%237289DA&link=https%3A%2F%2Fdiscord.unleashedflip.com%2F)](https://discord.unleashedflip.com)
 
 # Flipper Zero Unleashed Firmware
 This firmware is a fork of the original (OFW) version of [flipperdevices/flipperzero-firmware](https://github.com/flipperdevices/flipperzero-firmware) and represents the **most stable** custom build, incorporating **new features** and **improvements** to the original components while remaining **fully compatible** with the API and applications of the original firmware.
@@ -54,7 +44,7 @@ Before getting started:
 > [!NOTE]
 > Built automatically from dev branch
 
-- Web site: https://dev.unleashedflip.com
+- Web site: [dev.unleashedflip.com](https://dev.unleashedflip.com)
 - <img src="https://github.com/badges/shields/assets/10694593/c5c5acc3-f434-4a8d-a834-6d94a7ffb45a" alt="Telegram" title="Telegram" width="14" height="14"> Telegram: <a href="https://t.me/kotnehleb">t.me/kotnehleb</a>
 
 
@@ -167,7 +157,7 @@ Thanks to Official team (to their SubGHz Developer, Skorp) for implementing supp
 > | Cenmax_St-5       | Faraon       | Leopard          | Pantera_CLK       | Tomahawk_TZ-9030       |
 > | Cenmax_St-7       | Genius_Bravo | Magic_1          | Pantera_XS/Jaguar | Tomahawk_Z,X_3-5       |
 > | Centurion         | Gibidi       | Magic_2          | Partisan_RX       | ZX-730-750-1055        |
-> | Monarch           | Centurion    | Jolly Motors     |                   |  			             |
+> | Monarch           | Centurion    | Jolly Motors     |                   | 			                    |
 > </details>
 
 <br/>
