@@ -4,21 +4,20 @@
     </a>
 </h3>
 
-<div align="center" id="badges">
-    <a href="https://t.me/flipperzero_unofficial">
-       <img src="https://img.shields.io/endpoint?color=neon&style=flat&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fflipperzero_unofficial" alt="English Telegram Chat"/>  
-    </a>
-    <a href="https://t.me/flipperzero_unofficial_ru">
-       <img src="https://img.shields.io/endpoint?color=neon&style=flat&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fflipperzero_unofficial_ru" alt="Russian Telegram Chat"/>  
-    </a>
-    <a href="https://t.me/flipperzero_unofficial_ua">
-       <img src="https://img.shields.io/endpoint?color=neon&style=flat&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fflipperzero_unofficial_ua" alt="Ukraine Telegram Chat"/>  
-    </a>
-    <br>
-    <a href="https://discord.unleashedflip.com">
-       <img src="https://img.shields.io/discord/937479784148115456?style=flat&logo=discord&label=Discord&color=%237289DA&link=https%3A%2F%2Fdiscord.unleashedflip.com%2F" alt="Discord server"/>  
-    </a>
-</div>
+<a href="https://t.me/flipperzero_unofficial" style="text-decoration: none;">
+   <img src="https://img.shields.io/endpoint?color=neon&style=flat&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fflipperzero_unofficial" alt="English Telegram Chat"/>
+</a>
+<a href="https://t.me/flipperzero_unofficial_ru" style="text-decoration: none;">
+   <img src="https://img.shields.io/endpoint?color=neon&style=flat&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fflipperzero_unofficial_ru" alt="Russian Telegram Chat"/>  
+</a>
+<a href="https://t.me/flipperzero_unofficial_ua" style="text-decoration: none;">
+   <img src="https://img.shields.io/endpoint?color=neon&style=flat&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fflipperzero_unofficial_ua" alt="Ukraine Telegram Chat"/>  
+</a>
+
+<a href="https://discord.unleashedflip.com" style="text-decoration: none;">
+   <img src="https://img.shields.io/discord/937479784148115456?style=flat&logo=discord&label=Discord&color=%237289DA&link=https%3A%2F%2Fdiscord.unleashedflip.com%2F" alt="Discord server"/>  
+</a>
+
 
 # Flipper Zero Unleashed Firmware
 This firmware is a fork of the original (OFW) version of [flipperdevices/flipperzero-firmware](https://github.com/flipperdevices/flipperzero-firmware) and represents the **most stable** custom build, incorporating **new features** and **improvements** to the original components while remaining **fully compatible** with the API and applications of the original firmware.
@@ -65,7 +64,7 @@ Before getting started:
 >
 > - Regional TX restrictions removed
 > - Extra Sub-GHz frequencies added
-> - Frequency range can be extended in settings file (Warning: It can damage Flipper's hardware)
+> - Frequency range can be extended in settings file _(warning: It can damage Flipper's hardware)_
 > - Many rolling code [protocols](#current-modified-and-new-sub-ghz-protocols-list) now have the ability to save & send captured signals  
 > - FAAC SLH (Spa) & BFT Mitto (keeloq secure with seed) manual creation
 > - External CC1101 module support [(by quen0n)](https://github.com/DarkFlippers/unleashed-firmware/pull/307)
