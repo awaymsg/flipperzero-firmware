@@ -4,20 +4,10 @@
     </a>
 </h3>
 
-<a href="https://t.me/flipperzero_unofficial" style="text-decoration: none;">
-   <img src="https://img.shields.io/endpoint?color=neon&style=flat&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fflipperzero_unofficial" alt="English Telegram Chat"/>
-</a>
-<a href="https://t.me/flipperzero_unofficial_ru" style="text-decoration: none;">
-   <img src="https://img.shields.io/endpoint?color=neon&style=flat&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fflipperzero_unofficial_ru" alt="Russian Telegram Chat"/>  
-</a>
-<a href="https://t.me/flipperzero_unofficial_ua" style="text-decoration: none;">
-   <img src="https://img.shields.io/endpoint?color=neon&style=flat&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fflipperzero_unofficial_ua" alt="Ukraine Telegram Chat"/>  
-</a>
-
-<a href="https://discord.unleashedflip.com" style="text-decoration: none;">
-   <img src="https://img.shields.io/discord/937479784148115456?style=flat&logo=discord&label=Discord&color=%237289DA&link=https%3A%2F%2Fdiscord.unleashedflip.com%2F" alt="Discord server"/>  
-</a>
-
+[![English Telegram Chat](https://img.shields.io/endpoint?color=neon&style=flat&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fflipperzero_unofficial)](https://t.me/flipperzero_unofficial)
+[![Russian Telegram Chat](https://img.shields.io/endpoint?color=neon&style=flat&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fflipperzero_unofficial_ru)](https://t.me/flipperzero_unofficial_ru)
+[![Ukraine Telegram Chat](https://img.shields.io/endpoint?color=neon&style=flat&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fflipperzero_unofficial_ua)](https://t.me/flipperzero_unofficial_ua)
+[![Discord Server](https://img.shields.io/discord/937479784148115456?style=flat&logo=discord&label=Discord&color=%237289DA&link=https%3A%2F%2Fdiscord.unleashedflip.com%2F)](https://discord.unleashedflip.com)
 
 # Flipper Zero Unleashed Firmware
 This firmware is a fork of the original (OFW) version of [flipperdevices/flipperzero-firmware](https://github.com/flipperdevices/flipperzero-firmware) and represents the **most stable** custom build, incorporating **new features** and **improvements** to the original components while remaining **fully compatible** with the API and applications of the original firmware.
@@ -54,7 +44,7 @@ Before getting started:
 > [!NOTE]
 > Built automatically from dev branch
 
-- Web site: https://dev.unleashedflip.com
+- Web site: [dev.unleashedflip.com](https://dev.unleashedflip.com)
 - <img src="https://github.com/badges/shields/assets/10694593/c5c5acc3-f434-4a8d-a834-6d94a7ffb45a" alt="Telegram" title="Telegram" width="14" height="14"> Telegram: <a href="https://t.me/kotnehleb">t.me/kotnehleb</a>
 
 
@@ -149,27 +139,26 @@ Also check the [changelog in releases](https://github.com/DarkFlippers/unleashed
 Thanks to Official team (to their SubGHz Developer, Skorp) for implementing support (decoder + encoder / or decode only) for these protocols in OFW.  
 
 > [!NOTE]
-> Not ALL Keeloq systems are supported for decoding or emulation!
+> Not all Keeloq systems are supported for decoding or emulation!
 > <details>
-> <summary><strong>Supported keeloq manufacturers include</strong></summary>
+> <summary><strong>Supported Keeloq manufacturers include</strong></summary>
 > <br/>
 >
 > | Column 1          | Column 2     | Column 3         | Column 4          | Column 5               |
 > |-------------------|--------------|------------------|-------------------|------------------------|
-> | Alligator         | Comunello    | GSN              | Magic_3           | Reff                   |
-> | Alligator_S-275   | Dea_Mio      | Guard_RF-311A    | Magic_4           | Sheriff                |
-> | APS-1100_APS-2550 | DTM_Neo      | Harpoon          | Mongoose          | SL_A2-A4               |
-> | Aprimatic         | DoorHan      | IronLogic        | Mutanco_Mutancode | SL_A6-A9/Tomahawk_9010 |
-> | Beninca           | EcoStar      | JCM_Tech         | NICE_MHOUSE       | SL_B6,B9_dop           |
-> | BFT               | Elmes_Poland | KEY              | NICE_Smilo        | Sommer(fsk476)         |
-> | Came_Space        | FAAC_RC,XT   | Kingates_Stylo4k | Normstahl         | Stilmatic              |
-> | Cenmax            | FAAC_SLH     | KGB/Subaru       | Pantera           | Teco                   |
-> | Cenmax_St-5       | Faraon       | Leopard          | Pantera_CLK       | Tomahawk_TZ-9030       |
-> | Cenmax_St-7       | Genius_Bravo | Magic_1          | Pantera_XS/Jaguar | Tomahawk_Z,X_3-5       |
-> | Centurion         | Gibidi       | Magic_2          | Partisan_RX       | ZX-730-750-1055        |
-> | Monarch           | Centurion    | Jolly Motors     |                   |  			             |
+> | Alligator         | Comunello    | GSN              | Magic_4           | SL_A2-A4               |
+> | Alligator_S-275   | Dea_Mio      | Guard_RF-311A    | Mongoose          | SL_A6-A9/Tomahawk_9010 |
+> | APS-1100_APS-2550 | DTM_Neo      | Harpoon          | Mutanco_Mutancode | SL_B6,B9_dop           |
+> | Aprimatic         | DoorHan      | IronLogic        | NICE_MHOUSE       | Sommer(fsk476)         |
+> | Beninca           | EcoStar      | JCM_Tech         | NICE_Smilo        | Stilmatic              |
+> | BFT               | Elmes_Poland | KEY              | Normstahl         | Teco                   |
+> | Came_Space        | FAAC_RC,XT   | Kingates_Stylo4k | Pantera           | Tomahawk_TZ-9030       |
+> | Cenmax            | FAAC_SLH     | KGB/Subaru       | Pantera_CLK       | Tomahawk_Z,X_3-5       |
+> | Cenmax_St-5       | Faraon       | Leopard          | Pantera_XS/Jaguar | ZX-730-750-1055        |
+> | Cenmax_St-7       | Genius_Bravo | Magic_1          | Partisan_RX       |                        |
+> | Centurion         | Gibidi       | Magic_2          | Reff              |                        |
+> | Monarch           | Jolly Motors | Magic_3          | Sheriff           |                        |
 > </details>
-
 <br/>
 
 <details>
