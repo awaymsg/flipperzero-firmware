@@ -160,7 +160,7 @@ extern const FuriHalNfcTechBase furi_hal_nfc_felica;
  * This variable is defined in furi_hal_nfc.c. It will need to be modified
  * in case when a new technology is to be added.
  */
-extern const FuriHalNfcTechBase* furi_hal_nfc_tech[];
+extern const FuriHalNfcTechBase* const furi_hal_nfc_tech[];
 
 #ifdef __cplusplus
 }
