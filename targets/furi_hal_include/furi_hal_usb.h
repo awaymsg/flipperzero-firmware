@@ -9,7 +9,7 @@ extern "C" {
 typedef struct FuriHalUsbInterface FuriHalUsbInterface;
 
 struct FuriHalUsbInterface {
-    void (*init)(usbd_device* dev, FuriHalUsbInterface* intf, void* ctx);
+    void (*init)(usbd_device* dev, const FuriHalUsbInterface* intf, void* ctx);
     void (*deinit)(usbd_device* dev);
     void (*wakeup)(usbd_device* dev);
     void (*suspend)(usbd_device* dev);
@@ -49,13 +49,13 @@ void furi_hal_usb_init(void);
  * @param      ctx context passed to device mode init function
  * @return     true - mode switch started, false - mode switch is locked
  */
-bool furi_hal_usb_set_config(FuriHalUsbInterface* new_if, void* ctx);
+bool furi_hal_usb_set_config(const FuriHalUsbInterface* new_if, void* ctx);
 
 /** Get USB device configuration
  *
  * @return    current USB device mode
  */
-FuriHalUsbInterface* furi_hal_usb_get_config(void);
+const FuriHalUsbInterface* furi_hal_usb_get_config(void);
 
 /** Lock USB device mode switch
  */

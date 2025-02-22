@@ -40,7 +40,7 @@ typedef struct {
     volatile bool connected;
     volatile bool running;
 
-    FuriHalUsbInterface* usb_if_prev;
+    const FuriHalUsbInterface* usb_if_prev;
 
     uint8_t data_buffer[USB_CDC_PKT_LEN];
 } CliVcp;

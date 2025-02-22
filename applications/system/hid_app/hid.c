@@ -174,7 +174,7 @@ int32_t hid_usb_app(void* p) {
 
     FURI_LOG_D("HID", "Starting as USB app");
 
-    FuriHalUsbInterface* usb_mode_prev = furi_hal_usb_get_config();
+    const FuriHalUsbInterface* usb_mode_prev = furi_hal_usb_get_config();
     furi_hal_usb_unlock();
     furi_check(furi_hal_usb_set_config(&usb_hid, NULL) == true);
 

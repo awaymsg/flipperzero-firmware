@@ -170,7 +170,7 @@ static const struct CcidConfigDescriptor ccid_cfg_desc = {
         },
 };
 
-static void ccid_init(usbd_device* dev, FuriHalUsbInterface* intf, void* ctx);
+static void ccid_init(usbd_device* dev, const FuriHalUsbInterface* intf, void* ctx);
 static void ccid_deinit(usbd_device* dev);
 static void ccid_on_wakeup(usbd_device* dev);
 static void ccid_on_suspend(usbd_device* dev);
@@ -223,7 +223,7 @@ static void* ccid_set_string_descr(char* str) {
     return dev_str_desc;
 }
 
-static void ccid_init(usbd_device* dev, FuriHalUsbInterface* intf, void* ctx) {
+static void ccid_init(usbd_device* dev, const FuriHalUsbInterface* intf, void* ctx) {
     UNUSED(intf);
 
     FuriHalUsbCcidConfig* cfg = (FuriHalUsbCcidConfig*)ctx;
