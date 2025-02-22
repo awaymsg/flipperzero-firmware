@@ -432,7 +432,6 @@ FuriHalUsbInterface usb_cdc_dual = {
 static void cdc_init(usbd_device* dev, FuriHalUsbInterface* intf, void* ctx) {
     UNUSED(ctx);
     usb_dev = dev;
-
     cdc_if_cur = intf;
 
     char* name = (char*)furi_hal_version_get_device_name_ptr();
