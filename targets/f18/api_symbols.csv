@@ -1469,20 +1469,20 @@ Function,+,furi_hal_speaker_release,void,
 Function,+,furi_hal_speaker_set_volume,void,float
 Function,+,furi_hal_speaker_start,void,"float, float"
 Function,+,furi_hal_speaker_stop,void,
-Function,+,furi_hal_spi_acquire,void,FuriHalSpiBusHandle*
+Function,+,furi_hal_spi_acquire,void,const FuriHalSpiBusHandle*
 Function,+,furi_hal_spi_bus_deinit,void,FuriHalSpiBus*
-Function,+,furi_hal_spi_bus_handle_deinit,void,FuriHalSpiBusHandle*
-Function,+,furi_hal_spi_bus_handle_init,void,FuriHalSpiBusHandle*
+Function,+,furi_hal_spi_bus_handle_deinit,void,const FuriHalSpiBusHandle*
+Function,+,furi_hal_spi_bus_handle_init,void,const FuriHalSpiBusHandle*
 Function,+,furi_hal_spi_bus_init,void,FuriHalSpiBus*
-Function,+,furi_hal_spi_bus_rx,_Bool,"FuriHalSpiBusHandle*, uint8_t*, size_t, uint32_t"
-Function,+,furi_hal_spi_bus_trx,_Bool,"FuriHalSpiBusHandle*, const uint8_t*, uint8_t*, size_t, uint32_t"
-Function,+,furi_hal_spi_bus_trx_dma,_Bool,"FuriHalSpiBusHandle*, uint8_t*, uint8_t*, size_t, uint32_t"
-Function,+,furi_hal_spi_bus_tx,_Bool,"FuriHalSpiBusHandle*, const uint8_t*, size_t, uint32_t"
+Function,+,furi_hal_spi_bus_rx,_Bool,"const FuriHalSpiBusHandle*, uint8_t*, size_t, uint32_t"
+Function,+,furi_hal_spi_bus_trx,_Bool,"const FuriHalSpiBusHandle*, const uint8_t*, uint8_t*, size_t, uint32_t"
+Function,+,furi_hal_spi_bus_trx_dma,_Bool,"const FuriHalSpiBusHandle*, uint8_t*, uint8_t*, size_t, uint32_t"
+Function,+,furi_hal_spi_bus_tx,_Bool,"const FuriHalSpiBusHandle*, const uint8_t*, size_t, uint32_t"
 Function,-,furi_hal_spi_config_deinit_early,void,
 Function,-,furi_hal_spi_config_init,void,
 Function,-,furi_hal_spi_config_init_early,void,
 Function,-,furi_hal_spi_dma_init,void,
-Function,+,furi_hal_spi_release,void,FuriHalSpiBusHandle*
+Function,+,furi_hal_spi_release,void,const FuriHalSpiBusHandle*
 Function,+,furi_hal_switch,void,void*
 Function,+,furi_hal_usb_ccid_insert_smartcard,void,
 Function,+,furi_hal_usb_ccid_remove_smartcard,void,
@@ -2536,29 +2536,29 @@ Function,+,srand,void,unsigned
 Function,-,srand48,void,long
 Function,-,srandom,void,unsigned
 Function,+,sscanf,int,"const char*, const char*, ..."
-Function,+,st25r3916_change_reg_bits,void,"FuriHalSpiBusHandle*, uint8_t, uint8_t, uint8_t"
-Function,+,st25r3916_change_test_reg_bits,void,"FuriHalSpiBusHandle*, uint8_t, uint8_t, uint8_t"
-Function,+,st25r3916_check_reg,_Bool,"FuriHalSpiBusHandle*, uint8_t, uint8_t, uint8_t"
-Function,+,st25r3916_clear_reg_bits,void,"FuriHalSpiBusHandle*, uint8_t, uint8_t"
-Function,+,st25r3916_direct_cmd,void,"FuriHalSpiBusHandle*, uint8_t"
-Function,+,st25r3916_get_irq,uint32_t,FuriHalSpiBusHandle*
-Function,+,st25r3916_mask_irq,void,"FuriHalSpiBusHandle*, uint32_t"
-Function,+,st25r3916_modify_reg,void,"FuriHalSpiBusHandle*, uint8_t, uint8_t, uint8_t"
-Function,+,st25r3916_read_burst_regs,void,"FuriHalSpiBusHandle*, uint8_t, uint8_t*, uint8_t"
-Function,+,st25r3916_read_fifo,_Bool,"FuriHalSpiBusHandle*, uint8_t*, size_t, size_t*"
-Function,+,st25r3916_read_pta_mem,void,"FuriHalSpiBusHandle*, uint8_t*, size_t"
-Function,+,st25r3916_read_reg,void,"FuriHalSpiBusHandle*, uint8_t, uint8_t*"
-Function,+,st25r3916_read_test_reg,void,"FuriHalSpiBusHandle*, uint8_t, uint8_t*"
-Function,+,st25r3916_reg_read_fifo,void,"FuriHalSpiBusHandle*, uint8_t*, size_t"
-Function,+,st25r3916_reg_write_fifo,void,"FuriHalSpiBusHandle*, const uint8_t*, size_t"
-Function,+,st25r3916_set_reg_bits,void,"FuriHalSpiBusHandle*, uint8_t, uint8_t"
-Function,+,st25r3916_write_burst_regs,void,"FuriHalSpiBusHandle*, uint8_t, const uint8_t*, uint8_t"
-Function,+,st25r3916_write_fifo,void,"FuriHalSpiBusHandle*, const uint8_t*, size_t"
-Function,+,st25r3916_write_pta_mem,void,"FuriHalSpiBusHandle*, const uint8_t*, size_t"
-Function,+,st25r3916_write_ptf_mem,void,"FuriHalSpiBusHandle*, const uint8_t*, size_t"
-Function,+,st25r3916_write_pttsn_mem,void,"FuriHalSpiBusHandle*, uint8_t*, size_t"
-Function,+,st25r3916_write_reg,void,"FuriHalSpiBusHandle*, uint8_t, uint8_t"
-Function,+,st25r3916_write_test_reg,void,"FuriHalSpiBusHandle*, uint8_t, uint8_t"
+Function,+,st25r3916_change_reg_bits,void,"const FuriHalSpiBusHandle*, uint8_t, uint8_t, uint8_t"
+Function,+,st25r3916_change_test_reg_bits,void,"const FuriHalSpiBusHandle*, uint8_t, uint8_t, uint8_t"
+Function,+,st25r3916_check_reg,_Bool,"const FuriHalSpiBusHandle*, uint8_t, uint8_t, uint8_t"
+Function,+,st25r3916_clear_reg_bits,void,"const FuriHalSpiBusHandle*, uint8_t, uint8_t"
+Function,+,st25r3916_direct_cmd,void,"const FuriHalSpiBusHandle*, uint8_t"
+Function,+,st25r3916_get_irq,uint32_t,const FuriHalSpiBusHandle*
+Function,+,st25r3916_mask_irq,void,"const FuriHalSpiBusHandle*, uint32_t"
+Function,+,st25r3916_modify_reg,void,"const FuriHalSpiBusHandle*, uint8_t, uint8_t, uint8_t"
+Function,+,st25r3916_read_burst_regs,void,"const FuriHalSpiBusHandle*, uint8_t, uint8_t*, uint8_t"
+Function,+,st25r3916_read_fifo,_Bool,"const FuriHalSpiBusHandle*, uint8_t*, size_t, size_t*"
+Function,+,st25r3916_read_pta_mem,void,"const FuriHalSpiBusHandle*, uint8_t*, size_t"
+Function,+,st25r3916_read_reg,void,"const FuriHalSpiBusHandle*, uint8_t, uint8_t*"
+Function,+,st25r3916_read_test_reg,void,"const FuriHalSpiBusHandle*, uint8_t, uint8_t*"
+Function,+,st25r3916_reg_read_fifo,void,"const FuriHalSpiBusHandle*, uint8_t*, size_t"
+Function,+,st25r3916_reg_write_fifo,void,"const FuriHalSpiBusHandle*, const uint8_t*, size_t"
+Function,+,st25r3916_set_reg_bits,void,"const FuriHalSpiBusHandle*, uint8_t, uint8_t"
+Function,+,st25r3916_write_burst_regs,void,"const FuriHalSpiBusHandle*, uint8_t, const uint8_t*, uint8_t"
+Function,+,st25r3916_write_fifo,void,"const FuriHalSpiBusHandle*, const uint8_t*, size_t"
+Function,+,st25r3916_write_pta_mem,void,"const FuriHalSpiBusHandle*, const uint8_t*, size_t"
+Function,+,st25r3916_write_ptf_mem,void,"const FuriHalSpiBusHandle*, const uint8_t*, size_t"
+Function,+,st25r3916_write_pttsn_mem,void,"const FuriHalSpiBusHandle*, uint8_t*, size_t"
+Function,+,st25r3916_write_reg,void,"const FuriHalSpiBusHandle*, uint8_t, uint8_t"
+Function,+,st25r3916_write_test_reg,void,"const FuriHalSpiBusHandle*, uint8_t, uint8_t"
 Function,+,storage_common_copy,FS_Error,"Storage*, const char*, const char*"
 Function,+,storage_common_equivalent_path,_Bool,"Storage*, const char*, const char*"
 Function,+,storage_common_exists,_Bool,"Storage*, const char*"
@@ -2944,10 +2944,10 @@ Variable,+,furi_hal_i2c_bus_power,FuriHalI2cBus,
 Variable,+,furi_hal_i2c_handle_external,FuriHalI2cBusHandle,
 Variable,+,furi_hal_i2c_handle_power,FuriHalI2cBusHandle,
 Variable,+,furi_hal_spi_bus_d,FuriHalSpiBus,
-Variable,+,furi_hal_spi_bus_handle_display,FuriHalSpiBusHandle,
-Variable,+,furi_hal_spi_bus_handle_external,FuriHalSpiBusHandle,
-Variable,+,furi_hal_spi_bus_handle_sd_fast,FuriHalSpiBusHandle,
-Variable,+,furi_hal_spi_bus_handle_sd_slow,FuriHalSpiBusHandle,
+Variable,+,furi_hal_spi_bus_handle_display,const FuriHalSpiBusHandle,
+Variable,+,furi_hal_spi_bus_handle_external,const FuriHalSpiBusHandle,
+Variable,+,furi_hal_spi_bus_handle_sd_fast,const FuriHalSpiBusHandle,
+Variable,+,furi_hal_spi_bus_handle_sd_slow,const FuriHalSpiBusHandle,
 Variable,+,furi_hal_spi_bus_r,FuriHalSpiBus,
 Variable,+,furi_hal_spi_preset_1edge_low_16m,const LL_SPI_InitTypeDef,
 Variable,+,furi_hal_spi_preset_1edge_low_2m,const LL_SPI_InitTypeDef,
