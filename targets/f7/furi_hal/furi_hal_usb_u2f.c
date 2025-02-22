@@ -174,7 +174,7 @@ void furi_hal_hid_u2f_set_callback(HidU2fCallback cb, void* ctx) {
     }
 }
 
-FuriHalUsbInterface usb_hid_u2f = {
+const FuriHalUsbInterface usb_hid_u2f = {
     .init = hid_u2f_init,
     .deinit = hid_u2f_deinit,
     .wakeup = hid_u2f_on_wakeup,
