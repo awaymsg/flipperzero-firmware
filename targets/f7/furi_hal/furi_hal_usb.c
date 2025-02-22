@@ -32,7 +32,7 @@ typedef struct {
 } UsbApiEventDataStateCallback;
 
 typedef struct {
-    const FuriHalUsbInterface* interface;
+    FuriHalUsbInterface* interface;
     void* context;
 } UsbApiEventDataInterface;
 
@@ -43,7 +43,7 @@ typedef union {
 
 typedef union {
     bool bool_value;
-    const void* void_value;
+    void* void_value;
 } UsbApiEventReturnData;
 
 typedef struct {
@@ -60,7 +60,7 @@ typedef struct {
     bool connected;
     bool mode_lock;
     bool request_pending;
-    const FuriHalUsbInterface* interface;
+    FuriHalUsbInterface* interface;
     void* interface_context;
     FuriHalUsbStateCallback callback;
     void* callback_context;
@@ -132,7 +132,7 @@ static void furi_hal_usb_send_message(UsbApiEventMessage* message) {
     api_lock_wait_unlock_and_free(message->lock);
 }
 
-bool furi_hal_usb_set_config(const FuriHalUsbInterface* new_if, void* ctx) {
+bool furi_hal_usb_set_config(FuriHalUsbInterface* new_if, void* ctx) {
     UsbApiEventReturnData return_data = {
         .bool_value = false,
     };
@@ -152,7 +152,7 @@ bool furi_hal_usb_set_config(const FuriHalUsbInterface* new_if, void* ctx) {
     return return_data.bool_value;
 }
 
-const FuriHalUsbInterface* furi_hal_usb_get_config(void) {
+FuriHalUsbInterface* furi_hal_usb_get_config(void) {
     UsbApiEventReturnData return_data = {
         .void_value = NULL,
     };
@@ -326,7 +326,7 @@ static void wkup_evt(usbd_device* dev, uint8_t event, uint8_t ep) {
     }
 }
 
-static void usb_process_mode_start(const FuriHalUsbInterface* interface, void* context) {
+static void usb_process_mode_start(FuriHalUsbInterface* interface, void* context) {
     if(usb.interface != NULL) {
         usb.interface->deinit(&udev);
     }
@@ -344,7 +344,7 @@ static void usb_process_mode_start(const FuriHalUsbInterface* interface, void* c
     }
 }
 
-static void usb_process_mode_change(const FuriHalUsbInterface* interface, void* context) {
+static void usb_process_mode_change(FuriHalUsbInterface* interface, void* context) {
     if((interface != usb.interface) || (context != usb.interface_context)) {
         if(usb.enabled) {
             // Disable current interface
@@ -374,7 +374,7 @@ static void usb_process_mode_reinit(void) {
     usb_process_mode_start(usb.interface, usb.interface_context);
 }
 
-static bool usb_process_set_config(const FuriHalUsbInterface* interface, void* context) {
+static bool usb_process_set_config(FuriHalUsbInterface* interface, void* context) {
     if(usb.mode_lock) {
         return false;
     } else {

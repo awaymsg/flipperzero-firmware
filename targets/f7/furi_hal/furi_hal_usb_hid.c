@@ -226,7 +226,7 @@ static struct HidReport {
     struct HidReportConsumer consumer;
 } FURI_PACKED hid_report;
 
-static void hid_init(usbd_device* dev, const FuriHalUsbInterface* intf, void* ctx);
+static void hid_init(usbd_device* dev, FuriHalUsbInterface* intf, void* ctx);
 static void hid_deinit(usbd_device* dev);
 static void hid_on_wakeup(usbd_device* dev);
 static void hid_on_suspend(usbd_device* dev);
@@ -374,7 +374,7 @@ static void* hid_set_string_descr(char* str) {
     return dev_str_desc;
 }
 
-static void hid_init(usbd_device* dev, const FuriHalUsbInterface* intf, void* ctx) {
+static void hid_init(usbd_device* dev, FuriHalUsbInterface* intf, void* ctx) {
     UNUSED(intf);
     FuriHalUsbHidConfig* cfg = (FuriHalUsbHidConfig*)ctx;
     if(hid_semaphore == NULL) hid_semaphore = furi_semaphore_alloc(1, 1);

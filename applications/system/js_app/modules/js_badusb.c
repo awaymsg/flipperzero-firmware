@@ -7,7 +7,7 @@
 typedef struct {
     FuriHalUsbHidConfig* hid_cfg;
     uint16_t layout[128];
-    const FuriHalUsbInterface* usb_if_prev;
+    FuriHalUsbInterface* usb_if_prev;
     uint8_t key_hold_cnt;
 } JsBadusbInst;
 

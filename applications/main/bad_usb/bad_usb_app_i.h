@@ -44,7 +44,7 @@ struct BadUsbApp {
     BadUsbScript* bad_usb_script;
 
     BadUsbHidInterface interface;
-    const FuriHalUsbInterface* usb_if_prev;
+    FuriHalUsbInterface* usb_if_prev;
 };
 
 typedef enum {
