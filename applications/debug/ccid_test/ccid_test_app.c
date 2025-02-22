@@ -117,7 +117,7 @@ int32_t ccid_test_app(void* p) {
     //setup view
     CcidTestApp* app = ccid_test_app_alloc();
 
-    FuriHalUsbInterface* usb_mode_prev = furi_hal_usb_get_config();
+    const FuriHalUsbInterface* usb_mode_prev = furi_hal_usb_get_config();
     furi_hal_usb_unlock();
 
     furi_check(furi_hal_usb_set_config(&usb_ccid, &app->ccid_cfg) == true);
