@@ -16,6 +16,7 @@
 * Apps: **Check out more Apps updates and fixes by following** [this link](https://github.com/xMasterX/all-the-plugins/commits/dev)
 ## Other changes
 * Anims: Disable winter anims
+* NFC: mfclassic poller fix early key reuse in dictionary attack state machine (by @noproto)
 * OFW PR 4126: Stricter constness for const data (by @hedger)
 * OFW PR 4125: LFRFID: Fix Detection Conflict Between Securakey and Noralsy Format (by @zinongli)
 * OFW: Stdio API improvements
