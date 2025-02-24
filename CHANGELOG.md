@@ -1,5 +1,5 @@
 ## Main changes
-- Current API: 82.0
+- Current API: 83.0
 * SubGHz: Add ReversRB2 / RB2M Protocol (static 64 bit) full support with add manually (by @xMasterX)
 * SubGHz: Fix Hollarm protocol with more verification
 * SubGHz: Fix GangQi protocol (by @DoberBit and @mishamyte (who spent 2 weeks on this))
@@ -16,6 +16,8 @@
 * Apps: **Check out more Apps updates and fixes by following** [this link](https://github.com/xMasterX/all-the-plugins/commits/dev)
 ## Other changes
 * Anims: Disable winter anims
+* OFW PR 4126: Stricter constness for const data (by @hedger)
+* OFW PR 4125: LFRFID: Fix Detection Conflict Between Securakey and Noralsy Format (by @zinongli)
 * OFW: Stdio API improvements
 * OFW: GUI: Widget view extra options for JS 
 * OFW: Update heap implementation
