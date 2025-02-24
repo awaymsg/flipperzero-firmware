@@ -1,5 +1,7 @@
 ## Main changes
 - Current API: 82.0
+* SubGHz: Add ReversRB2 / RB2M Protocol (static 64 bit) full support with add manually (by @xMasterX)
+* SubGHz: Fix Hollarm protocol with more verification
 * SubGHz: Fix GangQi protocol (by @DoberBit and @mishamyte (who spent 2 weeks on this))
 * SubGHz: Came Atomo button hold simulation with full cycle simulation (to allow proper pairing with receiver)
 * OFW: LFRFID - **EM4305 support**
