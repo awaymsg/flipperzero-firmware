@@ -12,7 +12,7 @@
 #define JS_SDK_VENDOR_FIRMWARE "unleashed"
 #define JS_SDK_VENDOR          "flipperdevices"
 #define JS_SDK_MAJOR           0
-#define JS_SDK_MINOR  3
+#define JS_SDK_MINOR           3
 
 /**
  * @brief Returns the foreign pointer in `obj["_"]`
