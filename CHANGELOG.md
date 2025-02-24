@@ -18,7 +18,7 @@
 * Anims: Disable winter anims
 * NFC: mfclassic poller fix early key reuse in dictionary attack state machine (by @noproto)
 * OFW PR 4126: Stricter constness for const data (by @hedger)
-* OFW PR 4125: LFRFID: Fix Detection Conflict Between Securakey and Noralsy Format (by @zinongli)
+* OFW: LFRFID: Fix Detection Conflict Between Securakey and Noralsy Format (by @zinongli)
 * OFW: Stdio API improvements
 * OFW: GUI: Widget view extra options for JS 
 * OFW: Update heap implementation
