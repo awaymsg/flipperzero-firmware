@@ -1079,7 +1079,7 @@ Function,+,felica_get_uid,const uint8_t*,"const FelicaData*, size_t*"
 Function,+,felica_is_equal,_Bool,"const FelicaData*, const FelicaData*"
 Function,+,felica_load,_Bool,"FelicaData*, FlipperFormat*, uint32_t"
 Function,+,felica_poller_activate,FelicaError,"FelicaPoller*, FelicaData*"
-Function,+,felica_poller_read_blocks,FelicaError,"FelicaPoller*, const uint8_t, const uint8_t*, uint16_t, FelicaPollerReadCommandResponse**"
+Function,+,felica_poller_read_blocks,FelicaError,"FelicaPoller*, const uint8_t, const uint8_t* const, uint16_t, FelicaPollerReadCommandResponse** const"
 Function,+,felica_poller_sync_read,FelicaError,"Nfc*, FelicaData*, const FelicaCardKey*"
 Function,+,felica_reset,void,FelicaData*
 Function,+,felica_save,_Bool,"const FelicaData*, FlipperFormat*"
@@ -3070,7 +3070,6 @@ Function,+,power_reboot,void,"Power*, PowerBootMode"
 Function,+,power_settings_load,void,PowerSettings*
 Function,+,power_settings_save,void,const PowerSettings*
 Function,-,power_trigger_ui_update,void,Power*
-Function,+,power_enable_otg,void,"Power*, _Bool"
 Function,+,powf,float,"float, float"
 Function,-,powl,long double,"long double, long double"
 Function,+,pretty_format_bytes_hex_canonical,void,"FuriString*, size_t, const char*, const uint8_t*, size_t"
